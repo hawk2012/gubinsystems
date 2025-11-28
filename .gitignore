@@ -1,0 +1,26 @@
+```
+# Dependencies
+Gemfile.lock
+
+# Jekyll/Site build artifacts
+_site/
+.sass-cache/
+.jekyll-cache/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+```
