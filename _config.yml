@@ -15,7 +15,6 @@ plugins:
 exclude:
   - devops.pdf
   - devops.txt
-  - README.md
   - CNAME
 
 # Custom variables
@@ -24,7 +23,7 @@ author:
   title: DevOps/SRE Engineer
   location: Russia, Yaroslavl
   email: vipgubin@list.ru
-  phone: +7 (996) 242-63-65
+  
   telegram: "@sysodmen"
   website: https://gubin.systems
   github: https://github.com/hawk2012

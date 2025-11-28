@@ -22,7 +22,7 @@ title: Контакты
     <h3>Связаться со мной</h3>
     <ul>
       <li><strong>Email:</strong> <a href="mailto:vipgubin@list.ru">vipgubin@list.ru</a></li>
-      <li><strong>Телефон:</strong> <a href="tel:+79962426365">+7 (996) 242-63-65</a></li>
+      
       <li><strong>Telegram:</strong> <a href="https://t.me/sysodmen">@sysodmen</a></li>
       <li><strong>Website:</strong> <a href="https://gubin.systems">https://gubin.systems</a></li>
     </ul>

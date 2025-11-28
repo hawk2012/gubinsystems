@@ -1,15 +1,11 @@
 ```
-# Dependencies
-Gemfile.lock
-
-# Jekyll/Site build artifacts
-_site/
-.sass-cache/
-.jekyll-cache/
+# Backup files
+*_backup.md
 
 # Logs and temp files
 *.log
 *.tmp
+*.swp
 
 # Environment
 .env
@@ -19,6 +15,38 @@ _site/
 # Editors
 .vscode/
 .idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+.env
+env/
+.env.bak
+venv.bak
+
+# Build artifacts
+dist/
+build/
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+
+# Dependencies
+node_modules/
+target/
+.gradle/
+.mypy_cache/
+.pytest_cache/
+coverage/
+htmlcov/
+*.coverage
 
 # System files
 .DS_Store
