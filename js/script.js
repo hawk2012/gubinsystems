@@ -1,77 +1,120 @@
-// js/script.js
-
-// Мобильное меню
+// Ubuntu 24 GNOME Desktop Simulation
 document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    // Simulate typing effect in terminal
+    const terminalOutput = document.querySelector('.terminal-output');
+    const prompts = document.querySelectorAll('.terminal-prompt');
     
-    if (navToggle) {
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
+    // Add click functionality to desktop icons
+    const iconWrappers = document.querySelectorAll('.icon-wrapper');
+    iconWrappers.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const label = this.querySelector('.icon-label').textContent;
+            alert(`Opening ${label}...`);
         });
+    });
+    
+    // Add click functionality to dock icons
+    const dockIcons = document.querySelectorAll('.dock-icon');
+    dockIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
+    
+    // Update system clock
+    function updateClock() {
+        const now = new Date();
+        const options = { 
+            weekday: 'short', 
+            day: '2-digit', 
+            month: 'short',
+            hour: '2-digit', 
+            minute: '2-digit',
+            hour12: false
+        };
+        const dateTimeStr = now.toLocaleDateString('en-US', options)
+            .replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$2 $1, $3')
+            .replace(/(\w+ \d+), (\d{4})/, '$1 $3')
+            .replace(/(\d+:\d+)\s*AM|PM/, (match, time) => time + (now.getHours() >= 12 ? ' PM' : ' AM'));
+        
+        document.querySelector('.date-time').textContent = dateTimeStr;
     }
     
-    // Плавная прокрутка для навигационных ссылок
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Initialize and update clock every minute
+    updateClock();
+    setInterval(updateClock, 60000);
     
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+    // Add terminal interaction simulation
+    terminalOutput.addEventListener('click', function() {
+        const lastPrompt = document.querySelector('.terminal-prompt:last-child');
+        if (lastPrompt && !lastPrompt.textContent.includes('$ $')) {
+            const newPrompt = document.createElement('div');
+            newPrompt.className = 'terminal-prompt';
+            newPrompt.innerHTML = '<span class="prompt-user">user</span>@<span class="prompt-host">ubuntu</span>:<span class="prompt-path">~</span>$ ';
+            terminalOutput.appendChild(newPrompt);
+            newPrompt.scrollIntoView();
+        }
+    });
+    
+    // Add window dragging functionality
+    const terminalWindow = document.querySelector('.terminal-window');
+    const terminalHeader = document.querySelector('.terminal-header');
+    
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+    let xOffset = 0;
+    let yOffset = 0;
+    
+    terminalHeader.addEventListener("mousedown", dragStart);
+    document.addEventListener("mouseup", dragEnd);
+    document.addEventListener("mousemove", drag);
+    
+    function dragStart(e) {
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+        
+        if (e.target === terminalHeader || e.target.classList.contains('window-title') || 
+            e.target.classList.contains('window-buttons') || e.target.classList.contains('close-btn') ||
+            e.target.classList.contains('minimize-btn') || e.target.classList.contains('maximize-btn')) {
+            isDragging = true;
+        }
+    }
+    
+    function dragEnd() {
+        initialX = currentX;
+        initialY = currentY;
+        
+        isDragging = false;
+    }
+    
+    function drag(e) {
+        if (isDragging) {
             e.preventDefault();
             
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
             
-            if (targetSection) {
-                // Закрываем мобильное меню, если оно открыто
-                navMenu.classList.remove('active');
-                
-                // Прокручиваем к секции
-                window.scrollTo({
-                    top: targetSection.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Подсветка активного раздела при прокрутке
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+            xOffset = currentX;
+            yOffset = currentY;
             
-            if (pageYOffset >= sectionTop - 100) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+            setTranslate(currentX, currentY, terminalWindow);
+        }
+    }
+    
+    function setTranslate(xPos, yPos, el) {
+        el.style.transform = `translate(${xPos}px, ${yPos}px)`;
+    }
+    
+    // Add window button functionality
+    document.querySelector('.close-btn').addEventListener('click', function() {
+        terminalWindow.style.display = 'none';
     });
     
-    // DevOps анимации
-    const pipelineStages = document.querySelectorAll('.pipeline-stage');
-    pipelineStages.forEach((stage, index) => {
-        setTimeout(() => {
-            stage.style.opacity = '1';
-            stage.style.transform = 'translateY(0)';
-        }, 300 * index);
-    });
-    
-    // Анимация для элементов инфраструктуры
-    const gridNodes = document.querySelectorAll('.grid-node');
-    gridNodes.forEach((node, index) => {
-        setTimeout(() => {
-            node.style.animationDelay = `${index * 0.2}s`;
-        }, 100);
+    document.querySelector('.minimize-btn').addEventListener('click', function() {
+        terminalWindow.style.height = '30px';
+        terminalWindow.querySelector('.terminal-content').style.display = 'none';
     });
 });
