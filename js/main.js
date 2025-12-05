@@ -1,9 +1,10 @@
-// Main JavaScript file for the website
+// VTB Website JavaScript functionality
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-
+    
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
@@ -18,50 +19,83 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
+    
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
                 });
             }
         });
     });
-
-    // Add active class to current page in navigation
+    
+    // Form submission handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                alert('Пожалуйста, заполните все поля формы.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Пожалуйста, введите корректный email адрес.');
+                return;
+            }
+            
+            // In a real implementation, you would send the form data to a server
+            // For now, we'll just show a success message
+            alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
+            contactForm.reset();
+        });
+    }
+    
+    // Add active class to current page link in navigation
     const currentPage = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage || 
-            (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+            (currentPage === '' && link.getAttribute('href') === 'index.html') ||
+            (currentPage === 'index.html' && link.getAttribute('href') === 'index.html')) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
         }
     });
-
-    // Add scroll effect to header
+    
+    // Add scroll event listener for header effect
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.header');
         if (header) {
             if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
+                header.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
             } else {
-                header.style.boxShadow = 'none';
-                header.style.background = '#fff';
-                header.style.backdropFilter = 'none';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
             }
         }
     });
-
+    
     // Animation for elements when they come into view
     const observerOptions = {
         threshold: 0.1,
@@ -77,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements that should animate
-    document.querySelectorAll('.service-card, .experience-item, .skill-category, .timeline-content, .blog-post').forEach(el => {
+    document.querySelectorAll('.product-card, .news-card, .skill-category, .timeline-item, .blog-post').forEach(el => {
         observer.observe(el);
     });
 });
