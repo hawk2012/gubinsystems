@@ -3,242 +3,609 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Михаил Губин - DevOps/SRE-инженер</title>
-    <meta name="description" content="Портфолио Михаила Губина - DevOps/SRE-инженера с фокусом на стабильность, безопасность и автоматизацию">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/vtb-style.css">
+    <title>DevOps в Финтехе - Эксперт по автоматизации и надежности</title>
+    <meta name="description" content="Профессиональный DevOps-инженер, специализирующийся на работе в финтех-структурах. Автоматизация, надежность, безопасность и масштабируемость.">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --accent: #0f766e;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --section-bg: rgba(255, 255, 255, 0.7);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section with background image */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/devops-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .hero-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            margin-right: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            background: var(--section-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Experience Table */
+        .experience-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+        }
+
+        .experience-table th,
+        .experience-table td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .experience-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .experience-table tr:nth-child(even) {
+            background: rgba(241, 245, 249, 0.5);
+        }
+
+        .experience-table tr:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Skills Table */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+        }
+
+        .skills-table th,
+        .skills-table td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .skills-table th {
+            background: var(--secondary);
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+            border: 1px solid var(--glass-border);
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info ul {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 2rem 1rem;
+                margin: 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo">
-                    <a href="index.html">
-                        <h1>Михаил Губин</h1>
-                    </a>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#about" class="nav-link active">Обо мне</a></li>
-                    <li><a href="#experience" class="nav-link">Опыт</a></li>
-                    <li><a href="#skills" class="nav-link">Навыки</a></li>
-                    <li><a href="#education" class="nav-link">Образование</a></li>
-                    <li><a href="#blog" class="nav-link">Блог</a></li>
-                    <li><a href="#contact" class="nav-link">Контакты</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">DevOps Pro</div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">О себе</a></li>
+                <li><a href="#experience" class="nav-link">Опыт</a></li>
+                <li><a href="#skills" class="nav-link">Навыки</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <main class="main-content">
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>DevOps/SRE-инженер</h1>
-                    <p class="subtitle">Специалист с 9+ годами опыта, фокусирующийся на стабильности, автоматизации и отказоустойчивости высоконагруженных систем</p>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary">Связаться со мной</a>
-                        <a href="devops.pdf" class="btn btn-secondary">Скачать резюме</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>DevOps в Финтехе</h1>
+            <p class="subtitle">Эксперт по автоматизации и надежности</p>
+            <p>Профессиональный DevOps-инженер с фокусом на стабильность, безопасность и автоматизацию в финансовых структурах</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Связаться со мной</a>
+                <a href="devops.pdf" class="btn btn-secondary">Скачать резюме</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Обо мне</h2>
+            <div class="card">
+                <p>Я DevOps-инженер с более чем 9-летним опытом работы в финансовых структурах, специализируюсь на построении надежных, безопасных и автоматизированных систем. Моя экспертиза включает в себя проектирование, внедрение и поддержку инфраструктуры для высоконагруженных финансовых приложений.</p>
+                
+                <h3 style="margin: 1.5rem 0 1rem 0; color: var(--primary);">Ключевые компетенции:</h3>
+                <div class="features-grid">
+                    <div class="card">
+                        <h3>Финансовая безопасность</h3>
+                        <p>Реализация строгих мер безопасности, соответствующих требованиям финансового сектора, включая PCI DSS, SOX и другие регулятивные стандарты.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <h2>Обо мне</h2>
-                <div class="about-content">
-                    <p>DevOps/SRE-инженер с 9+ годами опыта, фокусирующийся на стабильности, автоматизации и отказоустойчивости высоконагруженных систем. Моя цель — превратить инфраструктуру из источника проблем в предсказуемый, автоматизированный и наблюдаемый актив.</p>
-                    
-                    <h3>Основные направления</h3>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <h4>Автоматизация и CI/CD</h4>
-                            <p>Разрабатываю и поддерживаю скрипты на Bash и Python для автоматизации развертывания, настройки сред и рутинных операций, что позволило сократить время выполнения задач на 30%+. Проектирую, настраиваю и администрирую пайплайны GitLab CI/CD для непрерывной интеграции и доставки.</p>
-                        </div>
-                        <div class="feature-card">
-                            <h4>Контейнеризация и оркестрация (Kubernetes)</h4>
-                            <p>Имею практический опыт в развертывании, настройке, эксплуатации и поддержке кластеров Kubernetes. Настраиваю и оптимизирую HPA (Horizontal Pod Autoscaler), readiness/liveness пробы, а также ресурсные ограничения (requests/limits) для повышения эффективности и стабильности.</p>
-                        </div>
-                        <div class="feature-card">
-                            <h4>Наблюдаемость и мониторинг</h4>
-                            <p>Настраиваю и поддерживаю стеки мониторинга на базе Prometheus и Grafana для проактивного выявления проблем. Внедряю и администрирую системы централизованного логирования (ELK, Loki) для анализа и отладки инцидентов.</p>
-                        </div>
-                        <div class="feature-card">
-                            <h4>Облачные платформы и инфраструктура</h4>
-                            <p>Имею опыт работы с гибридными и облачными средами, включая Yandex Cloud, VK Cloud Solutions, AWS и Azure. Администрирую серверы на базе Linux (Ubuntu) и Windows Server.</p>
-                        </div>
+                    <div class="card">
+                        <h3>Высокая доступность</h3>
+                        <p>Проектирование и поддержка систем с 99.99% доступности, критически важных для финансовых операций.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Мониторинг и аудит</h3>
+                        <p>Внедрение комплексных решений для мониторинга, аудита и логирования, необходимых для финансового сектора.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="experience" class="experience">
-            <div class="container">
-                <h2>Опыт работы</h2>
-                <div class="experience-grid">
-                    <div class="timeline-item">
-                        <h3>DevOps-инженер (Средний) • Инженер по сопровождению и автоматизации инфраструктуры</h3>
-                        <div class="timeline-date">Сентябрь 2025 — По наст. время (3 месяца)</div>
-                        <div class="timeline-company">FINSTAR FINANCIAL GROUP, Россия, Москва</div>
-                        <ul>
-                            <li>Развертывание, настройка и администрирование виртуальных машин и серверов на базе ОС Windows Server и Ubuntu Server</li>
-                            <li>Установка, конфигурация и поддержка веб-серверов (IIS, nginx) и сопутствующих технологий (ASP.NET, .NET Core)</li>
-                            <li>Разработка и поддержка скриптов автоматизации (Bash, Python) для развертывания приложений, настройки сред и рутинных операционных задач</li>
-                            <li>Администрирование и настройка инструментов CI/CD (непрерывной интеграции и доставки) на платформе GitLab</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Инженер по обеспечению качества (Старший) • SRE</h3>
-                        <div class="timeline-date">Январь 2023 — Май 2025 (2 года и 5 месяцев)</div>
-                        <div class="timeline-company">Спарго Технологии, Россия, Москва</div>
-                        <ul>
-                            <li>Работа в команде, отвечающей за надежность и бесперебойное функционирование сервисов</li>
-                            <li>Эксплуатация и автоматизация инфраструктуры на базе Linux и Windows</li>
-                            <li>Участие в развертывании, настройке и поддержке Kubernetes-кластеров</li>
-                            <li>Написание и внедрение bash-скриптов для автоматизации рутинных операций</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Менеджер технической поддержки (Средний) • Специалист технической поддержки</h3>
-                        <div class="timeline-date">Июль 2018 — Сентябрь 2020 (2 года и 3 месяца)</div>
-                        <div class="timeline-company">ЦВ ЭП, Россия, Москва</div>
-                        <ul>
-                            <li>Выпуск и управление ключами электронных цифровых подписей</li>
-                            <li>Настройка программного обеспечения на устройствах клиентов</li>
-                            <li>Консультирование клиентов по вопросам использования ЭЦП</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Фулстек разработчик (Средний) • Инженер по сборке ПО</h3>
-                        <div class="timeline-date">Январь 2018 — Март 2018 (3 месяца)</div>
-                        <div class="timeline-company">Тензор, Россия, Ярославль</div>
-                        <ul>
-                            <li>Участие в сборке и настройке программных систем на основе технических требований</li>
-                            <li>Подготовка и поддержка тестовых стендов</li>
-                            <li>Разработка скриптов и вспомогательных инструментов на Python и Bash</li>
-                        </ul>
-                    </div>
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Опыт работы</h2>
+            <table class="experience-table">
+                <thead>
+                    <tr>
+                        <th>Должность</th>
+                        <th>Компания</th>
+                        <th>Период</th>
+                        <th>Ключевые достижения</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DevOps-инженер (Средний)</td>
+                        <td>FINSTAR FINANCIAL GROUP</td>
+                        <td>Сентябрь 2025 — Наст. время</td>
+                        <td>Развертывание, настройка и администрирование виртуальных машин и серверов для финансовых приложений</td>
+                    </tr>
+                    <tr>
+                        <td>Инженер по обеспечению качества (Старший) - SRE</td>
+                        <td>Спарго Технологии</td>
+                        <td>Январь 2023 — Май 2025</td>
+                        <td>Обеспечение надежности и бесперебойного функционирования сервисов в финансовой инфраструктуре</td>
+                    </tr>
+                    <tr>
+                        <td>Фулстек разработчик (Средний)</td>
+                        <td>Тензор</td>
+                        <td>Январь 2018 — Март 2018</td>
+                        <td>Участие в сборке и настройке программных систем для корпоративного использования</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Профессиональные навыки</h2>
+            <table class="skills-table">
+                <thead>
+                    <tr>
+                        <th>Категория</th>
+                        <th>Навыки</th>
+                        <th>Уровень</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Инструменты и технологии</td>
+                        <td>Git, Python, SVN, SQL, .NET, C#, PostgreSQL, MongoDB, Nginx, Linux</td>
+                        <td>Высокий</td>
+                    </tr>
+                    <tr>
+                        <td>DevOps-инструменты</td>
+                        <td>Docker, Kubernetes, GitLab CI/CD, Ansible, Bash, Prometheus, Grafana, Hashicorp Vault, ELK Stack, Loki</td>
+                        <td>Высокий</td>
+                    </tr>
+                    <tr>
+                        <td>Облачные платформы</td>
+                        <td>Yandex Cloud, VK Cloud Solutions, AWS, Azure</td>
+                        <td>Средний</td>
+                    </tr>
+                    <tr>
+                        <td>Финансовые стандарты</td>
+                        <td>PCI DSS, SOX, ISO 27001, COBIT</td>
+                        <td>Средний</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Контактная информация</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Связаться со мной</h3>
+                    <ul>
+                        <li>📧 <a href="mailto:vipgubin@list.ru">vipgubin@list.ru</a></li>
+                        <li>💬 <a href="https://t.me/sysodmen" target="_blank">@sysodmen</a></li>
+                        <li>🌐 <a href="https://gubin.systems" target="_blank">https://gubin.systems</a></li>
+                        <li>💼 <a href="https://career.habr.com/mihail-lawyer1989-gubin" target="_blank">Хабр Карьера</a></li>
+                        <li>🐙 <a href="https://github.com/hawk2012" target="_blank">GitHub</a></li>
+                        <li>👔 <a href="https://gitlab.com/hawk2012" target="_blank">GitLab</a></li>
+                    </ul>
+                </div>
+                <div class="contact-info">
+                    <h3>Дополнительная информация</h3>
+                    <ul>
+                        <li>📍 Россия, Ярославль</li>
+                        <li>🕒 Готов к удаленной работе</li>
+                        <li>💼 Опыт работы в финтех-структурах</li>
+                        <li>🛡️ Знание стандартов безопасности</li>
+                        <li>📈 Опыт масштабирования систем</li>
+                        <li>🔍 Навыки мониторинга и аудита</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2>Профессиональные навыки</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Инструменты и технологии</h3>
-                        <ul>
-                            <li>Git</li>
-                            <li>Python</li>
-                            <li>SVN</li>
-                            <li>SQL</li>
-                            <li>.NET</li>
-                            <li>C#</li>
-                            <li>PostgreSQL</li>
-                            <li>MongoDB</li>
-                            <li>Nginx</li>
-                            <li>Linux</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>DevOps-инструменты</h3>
-                        <ul>
-                            <li>Docker</li>
-                            <li>Kubernetes</li>
-                            <li>GitLab CI/CD</li>
-                            <li>Ansible</li>
-                            <li>Bash</li>
-                            <li>Prometheus</li>
-                            <li>Grafana</li>
-                            <li>Hashicorp Vault</li>
-                            <li>ELK Stack</li>
-                            <li>Loki</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Облачные платформы</h3>
-                        <ul>
-                            <li>Yandex Cloud</li>
-                            <li>VK Cloud Solutions</li>
-                            <li>AWS</li>
-                            <li>Azure</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="education" class="education">
-            <div class="container">
-                <h2>Образование</h2>
-                <div class="education-grid">
-                    <div class="education-item">
-                        <h3>Центр подготовки руководителей и команд цифровой трансформации ВШГУ РАНХиГС</h3>
-                        <div class="education-date">Февраль 2024 — По наст. время</div>
-                        <p>Курс: Инструменты цифрового развития: проектный, процессный и продуктовый подходы</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>Университет Иннополис</h3>
-                        <div class="education-date">Июнь 2022 — Сентябрь 2022</div>
-                        <p>Курс: Основы тестирования ПО</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>ФГБОУ ВО "Тульский государственный университет"</h3>
-                        <div class="education-date">Октябрь 2020 — Ноябрь 2020</div>
-                        <p>Курс: Разработка веб-приложений</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>Московский финансово-юридический университет</h3>
-                        <div class="education-date">Сентябрь 2013 — Июнь 2016</div>
-                        <p>Управления и права, Специализация: Юрист</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="blog" class="blog">
-            <div class="container">
-                <h2>Блог</h2>
-                <div class="blog-container">
-                    <div class="blog-grid" id="blog-posts">
-                        <!-- Блог-посты будут загружаться динамически -->
-                        <div class="loading">Загрузка постов...</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Контактная информация</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Связаться со мной</h3>
-                        <ul>
-                            <li>📧 <a href="mailto:vipgubin@list.ru">vipgubin@list.ru</a></li>
-                            <li>💬 <a href="https://t.me/sysodmen" target="_blank">@sysodmen</a></li>
-                            <li>🌐 <a href="https://gubin.systems" target="_blank">https://gubin.systems</a></li>
-                            <li>💼 <a href="https://career.habr.com/mihail-lawyer1989-gubin" target="_blank">Хабр Карьера</a></li>
-                            <li>🐙 <a href="https://github.com/hawk2012" target="_blank">GitHub</a></li>
-                            <li>👔 <a href="https://gitlab.com/hawk2012" target="_blank">GitLab</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Навигация</h3>
                     <ul>
-                        <li><a href="#about">Обо мне</a></li>
+                        <li><a href="#about">О себе</a></li>
                         <li><a href="#experience">Опыт</a></li>
                         <li><a href="#skills">Навыки</a></li>
-                        <li><a href="#education">Образование</a></li>
                         <li><a href="#contact">Контакты</a></li>
                     </ul>
                 </div>
@@ -258,21 +625,35 @@
                         <li><a href="https://gitlab.com/hawk2012" target="_blank">GitLab</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Контакты</h3>
-                    <ul>
-                        <li>📧 vipgubin@list.ru</li>
-                        <li>📍 Россия, Ярославль</li>
-                        <li>🕒 Готов к удаленной работе</li>
-                    </ul>
-                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Михаил Губин - DevOps/SRE-инженер. Все права защищены.</p>
+                <p>&copy; 2025 DevOps в Финтехе - Эксперт по автоматизации и надежности. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                navbar.style.padding = '1rem 0';
+                navbar.style.background = 'rgba(255, 255, 255, 0.15)';
+            }
+        });
+    </script>
 </body>
 </html>
