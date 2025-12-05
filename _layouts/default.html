@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="DevOps, SRE, инженер, автоматизация, безопасность, стабильность, DevOps engineer, SRE engineer, Mikhail Gubin">
+    <meta name="author" content="Михаил Губин">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gubin.systems{{ page.url }}">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    {% if page.layout == "post" %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ page.title }}",
+        "description": "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ page.author | default: site.author }}"
+        },
+        "datePublished": "{{ page.date | date_to_xmlschema }}",
+        "dateModified": "{{ page.date | date_to_xmlschema }}",
+        "url": "https://gubin.systems{{ page.url }}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://gubin.systems{{ page.url }}"
+        }
+    }
+    </script>
+    {% else %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "{% if page.url == '/' %}Person{% else %}WebPage{% endif %}",
+        "name": "Михаил Губин",
+        "jobTitle": "DevOps/SRE-инженер",
+        "description": "{{ site.description }}",
+        "url": "https://gubin.systems",
+        "sameAs": [
+            "https://github.com/hawk2012",
+            "https://gitlab.com/hawk2012",
+            "https://career.habr.com/mihail-lawyer1989-gubin"
+        ]
+    }
+    </script>
+    {% endif %}
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>Михаил Губин</h1>
+                    <p>DevOps/SRE-инженер</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Главная</a></li>
+                    <li><a href="/pages/about.html" class="nav-link {% if page.url contains '/pages/about' %}active{% endif %}">Обо мне</a></li>
+                    <li><a href="/pages/skills.html" class="nav-link {% if page.url contains '/pages/skills' %}active{% endif %}">Навыки</a></li>
+                    <li><a href="/pages/experience.html" class="nav-link {% if page.url contains '/pages/experience' %}active{% endif %}">Опыт</a></li>
+                    <li><a href="/pages/education.html" class="nav-link {% if page.url contains '/pages/education' %}active{% endif %}">Образование</a></li>
+                    <li><a href="/blog/" class="nav-link {% if page.url contains '/blog' %}active{% endif %}">Блог</a></li>
+                    <li><a href="/pages/contact.html" class="nav-link {% if page.url contains '/pages/contact' %}active{% endif %}">Контакты</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Михаил Губин</h3>
+                    <p>DevOps/SRE-инженер с фокусом на стабильность, безопасность и автоматизацию</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/pages/about.html">Обо мне</a></li>
+                        <li><a href="/pages/skills.html">Навыки</a></li>
+                        <li><a href="/blog/">Блог</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li>📧 <a href="mailto:vipgubin@list.ru">vipgubin@list.ru</a></li>
+                        <li>📱 <a href="tel:+79962426365">+7 (996) 242-63-65</a></li>
+                        <li>💬 <a href="https://t.me/sysodmen" target="_blank">@sysodmen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Михаил Губин. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
