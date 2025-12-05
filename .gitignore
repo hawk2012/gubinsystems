@@ -1,20 +1,26 @@
 ```
-# System files
+# Dependencies
+node_modules/
+
+# Build artifacts
+_dist/
+_site/
+.jekyll-cache/
+
+# Logs and temp files
 *.log
 *.tmp
-*.swp
 
-# Configuration and cache files
-.config/
-.cache/
-.local/share/
+# Environment
+.env
+.env.local
+*.env.*
 
-# Desktop entries
-*.desktop
+# Editors
+.vscode/
+.idea/
 
-# User data files
-contacts.txt
-career_experience.txt
-education.txt
-profile_summary.txt
+# OS generated files
+.DS_Store
+Thumbs.db
 ```
