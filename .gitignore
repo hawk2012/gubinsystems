@@ -1,3 +1,4 @@
+```
 # Compiled and build artifacts
 *.pyc
 __pycache__/
@@ -62,15 +63,4 @@ htmlcov/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
-
-# MyPy cache
-.mypy_cache/
-# Pytest cache
-.pytest_cache/
-
-# Gradle
-.gradle/
-target/
-
-# Jupyter
-.ipynb_checkpoints/
+```
