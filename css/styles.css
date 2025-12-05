@@ -66,6 +66,50 @@ body {
     gap: 30px;
 }
 
+/* Updated desktop icons for grid layout */
+.desktop-icons.grid-layout {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-auto-rows: 120px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.desktop-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.icon-image {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.icon-label {
+    font-size: 12px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    max-width: 80px;
+    word-wrap: break-word;
+}
+
 .icon-wrapper {
     display: flex;
     flex-direction: column;
@@ -265,6 +309,63 @@ body {
 
 .terminal-content::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
+}
+
+/* Window styles for document viewing */
+.window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 200;
+    overflow: hidden;
+}
+
+.window-header {
+    background: #2d7bff;
+    color: white;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.window-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close-btn { background: #ff5f57; }
+.minimize-btn { background: #febc2e; }
+.maximize-btn { background: #28c840; }
+
+.window-content {
+    padding: 20px;
+    color: #333;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.window-title {
+    font-weight: bold;
+    margin: 0;
+}
+
+.file-content {
+    white-space: pre-wrap;
+    line-height: 1.5;
 }
 
 /* Responsive adjustments */

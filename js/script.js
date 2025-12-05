@@ -117,4 +117,68 @@ document.addEventListener('DOMContentLoaded', function() {
         terminalWindow.style.height = '30px';
         terminalWindow.querySelector('.terminal-content').style.display = 'none';
     });
+    
+    // Function to open a window with specified title and content
+    window.openWindow = function(title, content) {
+        document.getElementById('window-title').textContent = title;
+        document.getElementById('window-content').innerHTML = '<div class="file-content">' + content + '</div>';
+        document.getElementById('window').style.display = 'block';
+    }
+
+    // Function to close the window
+    window.closeWindow = function() {
+        document.getElementById('window').style.display = 'none';
+    }
+
+    // Make the document window draggable
+    const docWindow = document.getElementById('window');
+    const docHeader = document.querySelector('.window-header');
+    
+    let isDocDragging = false;
+    let docCurrentX;
+    let docCurrentY;
+    let docInitialX;
+    let docInitialY;
+    let docXOffset = 0;
+    let docYOffset = 0;
+    
+    if(docHeader) {
+        docHeader.addEventListener("mousedown", docDragStart);
+    }
+    
+    document.addEventListener("mouseup", docDragEnd);
+    document.addEventListener("mousemove", docDrag);
+    
+    function docDragStart(e) {
+        docInitialX = e.clientX - docXOffset;
+        docInitialY = e.clientY - docYOffset;
+        
+        if (e.target === docHeader || e.target.parentElement === docHeader) {
+            isDocDragging = true;
+        }
+    }
+    
+    function docDragEnd() {
+        docInitialX = docCurrentX;
+        docInitialY = docCurrentY;
+        isDocDragging = false;
+    }
+    
+    function docDrag(e) {
+        if (isDocDragging) {
+            e.preventDefault();
+            
+            docCurrentX = e.clientX - docInitialX;
+            docCurrentY = e.clientY - docInitialY;
+            
+            docXOffset = docCurrentX;
+            docYOffset = docCurrentY;
+            
+            setDocTranslate(docCurrentX, docCurrentY, docWindow);
+        }
+    }
+    
+    function setDocTranslate(xPos, yPos, el) {
+        el.style.transform = `translate(${xPos}px, ${yPos}px)`;
+    }
 });

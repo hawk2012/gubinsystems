@@ -1,109 +1,369 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubuntu 24 GNOME Desktop</title>
+    <title>Рабочий стол Ubuntu 24.04 GNOME</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #3b7ea7, #2c0052);
+            min-height: 100vh;
+            font-family: 'Ubuntu', 'Segoe UI', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .desktop {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%233b7ea7"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%232c0052" stroke-width="1" opacity="0.2"/></svg>');
+            background-size: cover;
+        }
+        
+        .panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+        
+        .activities {
+            font-weight: bold;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        
+        .activities:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .panel-right {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .date-time {
+            cursor: pointer;
+        }
+        
+        .dock {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            z-index: 90;
+        }
+        
+        .dock-item {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .dock-item:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .desktop-icons {
+            padding-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 100px);
+            grid-auto-rows: 120px;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .desktop-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .desktop-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        
+        .icon-image {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 5px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .icon-label {
+            font-size: 12px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            max-width: 80px;
+            word-wrap: break-word;
+        }
+        
+        .window {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 200;
+            overflow: hidden;
+        }
+        
+        .window-header {
+            background: #2d7bff;
+            color: white;
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .window-controls {
+            display: flex;
+            gap: 6px;
+        }
+        
+        .window-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .close-btn { background: #ff5f57; }
+        .minimize-btn { background: #febc2e; }
+        .maximize-btn { background: #28c840; }
+        
+        .window-content {
+            padding: 20px;
+            color: #333;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .window-title {
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .file-content {
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
     <div class="desktop">
-        <!-- Top Panel -->
-        <div class="top-panel">
+        <div class="panel">
             <div class="activities">Activities</div>
-            <div class="date-time">Mon 05 Dec 2025 10:00 AM</div>
-            <div class="system-icons">
-                <span class="icon wifi">📶</span>
-                <span class="icon battery">🔋</span>
-                <span class="icon user">👤</span>
+            <div class="panel-right">
+                <div class="wifi">📶</div>
+                <div class="sound">🔊</div>
+                <div class="battery">🔋</div>
+                <div class="date-time">12/05/2025 15:30</div>
             </div>
         </div>
         
-        <!-- Desktop Icons -->
-        <div class="desktop-icons">
-            <div class="icon-wrapper">
-                <div class="icon">🗂️</div>
-                <div class="icon-label">Documents</div>
+        <div class="desktop-icons grid-layout">
+            <div class="desktop-icon" onclick="openWindow('Образование', document.getElementById('education-content').textContent)">
+                <div class="icon-image">🎓</div>
+                <div class="icon-label">Образование</div>
             </div>
-            <div class="icon-wrapper">
-                <div class="icon">💾</div>
-                <div class="icon-label">Downloads</div>
+            
+            <div class="desktop-icon" onclick="openWindow('Места работы', document.getElementById('career-content').textContent)">
+                <div class="icon-image">💼</div>
+                <div class="icon-label">Места работы</div>
             </div>
-            <div class="icon-wrapper">
-                <div class="icon">📋</div>
-                <div class="icon-label">Terminal</div>
+            
+            <div class="desktop-icon" onclick="openWindow('Контакты', document.getElementById('contacts-content').textContent)">
+                <div class="icon-image">👤</div>
+                <div class="icon-label">Контакты</div>
             </div>
-        </div>
-        
-        <!-- Terminal Window -->
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <div class="window-buttons">
-                    <span class="close-btn">●</span>
-                    <span class="minimize-btn">●</span>
-                    <span class="maximize-btn">●</span>
-                </div>
-                <div class="window-title">Terminal - Ubuntu 24.04 LTS</div>
+            
+            <div class="desktop-icon">
+                <div class="icon-image">🗂️</div>
+                <div class="icon-label">Документы</div>
             </div>
-            <div class="terminal-content">
-                <div class="terminal-output">
-                    <div class="terminal-prompt"><span class="prompt-user">user</span>@<span class="prompt-host">ubuntu</span>:<span class="prompt-path">~</span>$ <span class="command">uname -a</span></div>
-                    <div class="terminal-response">Linux ubuntu 6.8.0-48-generic #48-Ubuntu SMP PREEMPT_DYNAMIC Fri Oct 11 15:53:15 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux</div>
-                    
-                    <div class="terminal-prompt"><span class="prompt-user">user</span>@<span class="prompt-host">ubuntu</span>:<span class="prompt-path">~</span>$ <span class="command">cat /etc/os-release</span></div>
-                    <div class="terminal-response">PRETTY_NAME="Ubuntu 24.04.1 LTS"<br>NAME="Ubuntu"<br>VERSION_ID="24.04"<br>VERSION="24.04.1 LTS (Noble Numbat)"<br>ID=ubuntu<br>ID_LIKE=debian<br>HOME_URL="https://www.ubuntu.com/"<br>SUPPORT_URL="https://help.ubuntu.com/"<br>BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"<br>PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"<br>VERSION_CODENAME=noble<br>UBUNTU_CODENAME=noble</div>
-                    
-                    <div class="terminal-prompt"><span class="prompt-user">user</span>@<span class="prompt-host">ubuntu</span>:<span class="prompt-path">~</span>$ <span class="command">gnome-shell --version</span></div>
-                    <div class="terminal-response">GNOME Shell 46.1</div>
-                    
-                    <div class="terminal-prompt"><span class="prompt-user">user</span>@<span class="prompt-host">ubuntu</span>:<span class="prompt-path">~</span>$ <span class="command">echo "Welcome to Ubuntu 24.04 LTS with GNOME Desktop"</span></div>
-                    <div class="terminal-response">Welcome to Ubuntu 24.04 LTS with GNOME Desktop</div>
-                    
-                    <div class="terminal-prompt"><span class="prompt-user">user</span>@<span class="prompt-host">ubuntu</span>:<span class="prompt-path">~</span>$ <span class="command">neofetch</span></div>
-                    <div class="terminal-response">
-                        <pre>
-     /////////////    user@ubuntu 
-    /////////////     OS: Ubuntu 24.04 LTS x86_64 
-    ////      ////    Host: VirtualBox 1.2 
-    ////      ////    Kernel: 6.8.0-48-generic 
-    ////      ////    Uptime: 1 hour, 23 mins 
-    /////////////     Shell: bash 5.2.21 
-   ///////////       Resolution: 1920x1080 
-   ////             DE: GNOME 46 
-   ////      ////    WM: Mutter 
-   ////      ////    CPU: Intel i7 (virtual) 
-    ////////////     GPU: VGA (virtual) 
-        ////////     Memory: 2456MiB / 7973MiB 
-
-                        </pre>
-                    </div>
-                    
-                    <div class="terminal-prompt"><span class="prompt-user">user</span>@<span class="prompt-host">ubuntu</span>:<span class="prompt-path">~</span>$ <span class="command">cat /home/user/description.txt</span></div>
-                    <div class="terminal-response">This is a simulated Ubuntu 24.04 LTS GNOME desktop environment.<br><br>
-                    Key features:<br>
-                    • GNOME Shell version 46.1<br>
-                    • Linux kernel 6.8.x<br>
-                    • Ubuntu 24.04 LTS (Noble Numbat)<br>
-                    • Terminal-based system information display<br>
-                    • Desktop environment simulation<br>
-                    • Modern GNOME interface elements<br><br>
-                    This environment demonstrates the look and feel of the latest Ubuntu GNOME desktop with real system commands output shown in terminal format.</div>
-                    
-                    <div class="terminal-prompt"><span class="prompt-user">user</span>@<span class="prompt-host">ubuntu</span>:<span class="prompt-path">~</span>$ </div>
-                </div>
+            
+            <div class="desktop-icon">
+                <div class="icon-image">📂</div>
+                <div class="icon-label">Загрузки</div>
             </div>
         </div>
         
-        <!-- Bottom Dock -->
         <div class="dock">
-            <div class="dock-icon active">📱</div>
-            <div class="dock-icon">📧</div>
-            <div class="dock-icon">🌐</div>
-            <div class="dock-icon">📝</div>
-            <div class="dock-icon">📁</div>
+            <div class="dock-item">🔍</div>
+            <div class="dock-item">📧</div>
+            <div class="dock-item">🌐</div>
+            <div class="dock-item">📝</div>
+            <div class="dock-item">📁</div>
+        </div>
+        
+        <div class="window" id="window">
+            <div class="window-header">
+                <h3 class="window-title" id="window-title">Document</h3>
+                <div class="window-controls">
+                    <div class="window-btn minimize-btn"></div>
+                    <div class="window-btn maximize-btn"></div>
+                    <div class="window-btn close-btn" onclick="closeWindow()"></div>
+                </div>
+            </div>
+            <div class="window-content" id="window-content">
+                <!-- Content will be inserted here -->
+            </div>
         </div>
     </div>
     
+    <!-- Hidden content elements -->
+    <div id="education-content" style="display: none;">
+        Михаил Губин - Образование и дополнительные курсы
+
+Высшее образование:
+Московский финансово-юридический университет (Сентябрь 2013 — Июнь 2016)
+- Управления и права, Россия, Москва
+- Специализация: гражданское право по специальности "Юрист"
+- После обучения проходил практику в ФНС России по Ярославской области длительностью 2 месяца
+- Делал попытки устройства в суды, УФАС, ФССП РФ
+
+Дополнительное образование:
+1. Центр подготовки руководителей и команд цифровой трансформации ВШГУ РАНХиГС
+   - Пройденный курс: Инструменты цифрового развития: проектный, процессный и продуктовый подходы
+   - Период: Февраль 2024 — По наст. время
+   - Улучшенные навыки: Управление проектами, Построение команды, Стратегическое планирование, Оптимизация бизнес-процессов, Автоматизация процессов, Управление разработкой, Agile, Kanban, Scrum
+
+2. Университет Иннополис (Россия, Иннополис)
+   - Пройденный курс: Основы тестирования ПО
+   - Период: Июнь 2022 — Сентябрь 2022
+   - Улучшенные навыки: Linux, SQL, UX тестирование, Тестирование дизайна, TestLink, Postman, OpenAPI Specification, CI/CD, Нагрузочное тестирование, Автоматизация тестирования
+
+3. ФГБОУ ВО "Тульский государственный университет"
+   - Пройденный курс: Разработка веб-приложений
+   - Период: Октябрь 2020 — Ноябрь 2020
+   - Улучшенные навыки: HTML, CSS, JQuery, Веб-разработка, Angular, PHP, PHPMyAdmin, Lamp, Git, ООП
+   - Пройденная практика и достижения: Научился новым навыкам и улучшил уже существующие
+    </div>
+    
+    <div id="career-content" style="display: none;">
+        Михаил Губин - DevOps/SRE-инженер с фокусом на стабильность, безопасность и автоматизацию
+
+Опыт работы:
+1. FINSTAR FINANCIAL GROUP (Сентябрь 2025 — По наст. время, 3 месяца)
+   - Должность: DevOps-инженер (Средний) / Инженер по сопровождению и автоматизации инфраструктуры
+   - Россия, Москва
+   - Обязанности:
+     * Развертывание, настройка и администрирование виртуальных машин и серверов на базе ОС Windows Server и Ubuntu Server
+     * Установка, конфигурация и поддержка веб-серверов (IIS, nginx) и сопутствующих технологий (ASP.NET, .NET Core)
+     * Разработка и поддержка скриптов автоматизации (Bash, Python) для развертывания приложений, настройки сред и рутинных операционных задач
+     * Администрирование и настройка инструментов CI/CD (непрерывной интеграции и доставки) на платформе GitLab
+     * Работа с системами контроля версий (Git)
+     * Участие в проектах по миграции и поддержке инфраструктуры в облачных и гибридных средах (Yandex Cloud, VK Cloud Solutions, AWS, Azure)
+     * Внедрение и использование инструментов управления конфигурациями (Ansible)
+     * Контейнеризация приложений с использованием Docker, оркестрация контейнеров с помощью Docker Compose
+     * Анализ и отладка приложений на различных языках программирования (Python, Bash, C#) для решения операционных задач
+
+2. Спарго Технологии (Январь 2023 — Май 2025, 2 года и 5 месяцев)
+   - Должность: Инженер по обеспечению качества (Старший) / SRE
+   - Россия, Москва
+   - Обязанности:
+     * Работа в команде, отвечающей за надежность и бесперебойное функционирование сервисов
+     * Эксплуатация и автоматизация инфраструктуры на базе Linux и Windows
+     * Работа с Kubernetes (k8s) — развертывание, настройка и поддержка кластеров
+     * Написание и внедрение bash-скриптов для автоматизации рутинных операций
+     * Использование инструментов GitOps (например, Argo CD) для управления конфигурациями в k8s-средах
+     * Оптимизация ресурсных ограничений (requests/limits) и настройка readiness/liveness проб
+     * Работа с SQL-базами данных, отслеживание и устранение проблем репликации
+     * Поддержка API мобильных приложений, анализ логов, устранение ошибок
+     * Интеграция сервисов с централизованной системой логирования и мониторинга в k8s-средах (Prometheus, Grafana)
+     * Техническое документирование
+
+3. ЦВ ЭП (Июль 2018 — Сентябрь 2020, 2 года и 3 месяца)
+   - Должность: Менеджер технической поддержки (Средний) / Специалист технической поддержки
+   - Россия, Москва
+   - Обязанности:
+     * Выпуск и управление ключами электронных цифровых подписей
+     * Консультации клиентов по вопросам использования ЭЦП
+     * Настройка программного обеспечения на устройствах клиентов
+     * Помощь в аккредитации клиентов на различных торговых площадках
+
+4. Тензор (Сентябрь 2013 — Март 2018, 4 года и 7 месяцев)
+   - Должность: Фулстек разработчик (Средний) / Инженер по сборке ПО
+   - Россия, Ярославль
+   - Обязанности:
+     * Сборка и настройка программных систем на основе технических требований
+     * Подготовка и поддержка тестовых стендов
+     * Разработка скриптов и вспомогательных инструментов на Python и Bash для автоматизации задач
+     * Тестирование функциональности систем
+
+5. vKurske.org (Январь 2018 — Март 2018, 3 месяца)
+   - Должность: Системный администратор (Средний)
+   - Россия, Курск
+   - Обязанности:
+     * Обеспечение устойчивой и бесперебойной работы программного продукта
+     * Мониторинг работоспособности и производительности
+     * Техническая поддержка сотрудников компании
+     * Разработка и внедрение автоматизированных процессов для управления и масштабирования IT-инфраструктуры
+
+6. ФНС России (Май 2010 — Июль 2010, 3 месяца)
+   - Должность: Системный администратор (Стажёр)
+   - Россия, Ярославль
+   - Обязанности:
+     * Обработка и корректировка данных в базах налоговой службы
+     * Ознакомление с принципами хранения и обработки государственных данных
+    </div>
+    
+    <div id="contacts-content" style="display: none;">
+        Михаил Губин - Контактная информация
+
+Контактная информация:
+- Хабр Карьера: https://career.habr.com/mihail-lawyer1989-gubin
+- Мобильный: +7 (996) 242-63-65
+- Телеграм: @sysodmen
+- VK: mgubin
+- Email: vipgubin@list.ru
+- GitLab: https://gitlab.com/hawk2012
+- Stackoverflow: https://stackoverflow.com/users/7057373/Михаил
+- GitHub: https://github.com/hawk2012
+- Сайт: https://gubin.systems
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
