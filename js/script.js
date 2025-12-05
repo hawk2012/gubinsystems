@@ -57,4 +57,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // DevOps анимации
+    const pipelineStages = document.querySelectorAll('.pipeline-stage');
+    pipelineStages.forEach((stage, index) => {
+        setTimeout(() => {
+            stage.style.opacity = '1';
+            stage.style.transform = 'translateY(0)';
+        }, 300 * index);
+    });
+    
+    // Анимация для элементов инфраструктуры
+    const gridNodes = document.querySelectorAll('.grid-node');
+    gridNodes.forEach((node, index) => {
+        setTimeout(() => {
+            node.style.animationDelay = `${index * 0.2}s`;
+        }, 100);
+    });
 });

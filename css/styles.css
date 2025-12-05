@@ -190,13 +190,15 @@ a {
 .hero {
     padding: 160px 0 100px;
     background: linear-gradient(135deg, var(--white) 0%, var(--secondary-color) 100%);
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -205,6 +207,171 @@ a {
     flex: 1;
     max-width: 600px;
     text-align: left;
+}
+
+/* DevOps стили */
+.terminal-header {
+    background-color: #2d3748;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-title {
+    color: #cbd5e0;
+    font-family: monospace;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.terminal-content {
+    background-color: #1a202c;
+    border: 1px solid #4a5568;
+    border-radius: 0 0 8px 8px;
+    padding: 30px;
+    color: #e2e8f0;
+}
+
+.terminal-content h1.hero-title {
+    color: #68d391;
+}
+
+.terminal-content h2.hero-subtitle {
+    color: #63b3ed;
+}
+
+.terminal-content p.hero-description {
+    color: #a0aec0;
+}
+
+.terminal-content .btn-primary {
+    background-color: #48bb78;
+    border-color: #48bb78;
+}
+
+.terminal-content .btn-primary:hover {
+    background-color: #38a169;
+    border-color: #38a169;
+}
+
+.terminal-content .btn-secondary {
+    background-color: transparent;
+    color: #4299e1;
+    border-color: #4299e1;
+}
+
+.terminal-content .btn-secondary:hover {
+    background-color: #4299e1;
+    color: var(--white);
+}
+
+.devops-visual {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-left: 40px;
+}
+
+.pipeline-animation {
+    display: flex;
+    align-items: center;
+    background: rgba(31, 41, 55, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    justify-content: center;
+}
+
+.pipeline-stage {
+    background: #4f46e5;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    min-width: 70px;
+    text-align: center;
+}
+
+.pipeline-arrow {
+    color: #9ca3af;
+    font-size: 1.2rem;
+    margin: 0 8px;
+}
+
+.infrastructure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.grid-node {
+    background: #10b981;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.8rem;
+    animation: pulse 2s infinite;
+}
+
+.grid-node.server {
+    background: #8b5cf6;
+}
+
+.grid-node.container {
+    background: #ec4899;
+}
+
+.grid-node.cloud {
+    background: #3b82f6;
+}
+
+.grid-node.k8s {
+    background: #f59e0b;
+}
+
+.grid-connection {
+    grid-column: 1 / -1;
+    height: 2px;
+    background: #9ca3af;
+    animation: slide 3s infinite linear;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes slide {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
+}
+
+.pipeline-stage {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .hero-title {
