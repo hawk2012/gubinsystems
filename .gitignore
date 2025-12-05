@@ -1,9 +1,10 @@
-```
 # Compiled and build artifacts
 *.pyc
 __pycache__/
 *.o
 *.obj
+dist/
+build/
 *.class
 *.exe
 *.dll
@@ -17,7 +18,7 @@ venv/
 .venv/
 .env
 .env.local
-*.env.*
+.env.*
 
 # Logs and temp files
 *.log
@@ -37,16 +38,6 @@ Thumbs.db
 coverage/
 htmlcov/
 .coverage
-
-# Build directories
-dist/
-build/
-target/
-.gradle/
-
-# Python specific
-.mypy_cache/
-.pytest_cache/
 
 # Compressed files
 *.zip
@@ -71,4 +62,15 @@ target/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
-```
+
+# MyPy cache
+.mypy_cache/
+# Pytest cache
+.pytest_cache/
+
+# Gradle
+.gradle/
+target/
+
+# Jupyter
+.ipynb_checkpoints/

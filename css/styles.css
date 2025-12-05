@@ -1,827 +1,1068 @@
-/* css/styles.css */
+/* Новый стиль для FinTech DevOps портфолио - сочетание VTB и Sberbank */
+/* Современный стиль, объединяющий надежность банковского сектора и технологичность DevOps */
+
+/* CSS-переменные в стиле VTB и Сбербанка */
+:root {
+  /* Цвета VTB (сине-красная палитра) */
+  --vtb-blue: #0056b3;
+  --vtb-blue-light: #3399ff;
+  --vtb-blue-dark: #003366;
+  --vtb-red: #e60000;
+  --vtb-red-light: #ff3333;
+  
+  /* Цвета Сбербанка (фиолетово-синяя палитра) */
+  --sber-purple: #6a00d8;
+  --sber-purple-light: #9b66ff;
+  --sber-purple-dark: #4a0099;
+  --sber-blue: #00a2ff;
+  --sber-blue-light: #66ccff;
+  
+  /* Финтех акценты - комбинация VTB и Сбербанка */
+  --fintech-primary: var(--vtb-blue);
+  --fintech-secondary: var(--sber-purple);
+  --fintech-accent: var(--vtb-red);
+  --fintech-success: #00b894;
+  --fintech-warning: #fdcb6e;
+  --fintech-info: var(--sber-blue);
+  
+  /* DevOps цвета */
+  --devops-blue: #2980b9;
+  --devops-green: #27ae60;
+  --devops-orange: #e67e22;
+  --devops-purple: #9b59b6;
+  --devops-gray: #34495e;
+  
+  /* Нейтральные цвета */
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --dark-gray: #6c757d;
+  --text-dark: #212529;
+  --text-light: #6c757d;
+  
+  /* Тени и границы */
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --border-radius-sm: 4px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+}
 
 /* Базовые стили */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #1e3a8a;
-    --primary-light: #3b82f6;
-    --secondary-color: #f8fafc;
-    --accent-color: #0ea5e9;
-    --text-dark: #1e293b;
-    --text-light: #64748b;
-    --white: #ffffff;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --border-radius: 8px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--white);
+  font-family: 'Inter', 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--white);
+  background-image: 
+    radial-gradient(#e9ecef 1px, transparent 1px),
+    radial-gradient(#e9ecef 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--fintech-primary);
 }
 
 p {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: var(--fintech-primary);
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .section-title {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  color: var(--fintech-primary);
 }
 
 .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-color);
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
+  border-radius: 2px;
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--border-radius-lg);
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: 2px solid var(--primary-color);
+  background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
+  color: var(--white);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-medium);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-light);
-    border-color: var(--primary-light);
+  background: linear-gradient(135deg, var(--fintech-secondary) 0%, var(--fintech-primary) 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-heavy);
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--fintech-primary);
+  border: 2px solid var(--fintech-primary);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
+  background-color: var(--fintech-primary);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
 }
 
-.text-link {
-    color: var(--primary-color);
-    font-weight: 600;
-    transition: color 0.3s ease;
-    text-decoration: none;
-    border-bottom: 2px dashed var(--primary-color); /* Штрих-пунктирное подчеркивание */
-    padding-bottom: 1px;
-}
-
-.text-link:hover {
-    color: var(--primary-light);
-    border-bottom-color: var(--primary-light); /* Меняем цвет подчеркивания при наведении */
-}
-
-/* Навигация */
+/* Навигация в стиле банковских сайтов */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--white);
-    box-shadow: var(--shadow);
-    z-index: 1000;
-    padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-light);
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--medium-gray);
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .nav-logo a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--fintech-primary);
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-logo i {
+  margin-right: 8px;
+  color: var(--fintech-primary);
 }
 
 .nav-menu {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2.5rem;
 }
 
 .nav-link {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    color: var(--text-dark);
-    transition: color 0.3s ease;
-    position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+  color: var(--fintech-primary);
 }
 
 .nav-link.active {
-    color: var(--primary-color);
+  color: var(--fintech-primary);
 }
 
 .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary-color);
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
+  border-radius: 2px;
 }
 
 .nav-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    margin: 3px 0;
-    transition: 0.3s;
+  width: 25px;
+  height: 3px;
+  background-color: var(--fintech-primary);
+  margin: 3px 0;
+  transition: 0.3s;
 }
 
-/* Главная секция */
+/* Главная секция в стиле банковских сайтов с DevOps элементами */
 .hero {
-    padding: 160px 0 100px;
-    background: linear-gradient(135deg, var(--white) 0%, var(--secondary-color) 100%);
-    position: relative;
-    overflow: hidden;
+  padding: 180px 0 120px;
+  background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+    linear-gradient(45deg, transparent 49%, rgba(255, 255, 255, 0.05) 50%, transparent 51%);
+  background-size: 600px 600px, 400px 400px, 100% 100%;
+  z-index: 0;
 }
 
 .hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 600px;
-    text-align: left;
-}
-
-/* DevOps стили */
-.terminal-header {
-    background-color: #2d3748;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.terminal-dots {
-    display: flex;
-    gap: 6px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.terminal-title {
-    color: #cbd5e0;
-    font-family: monospace;
-    font-size: 0.9rem;
-    flex-grow: 1;
-    text-align: center;
-}
-
-.terminal-content {
-    background-color: #1a202c;
-    border: 1px solid #4a5568;
-    border-radius: 0 0 8px 8px;
-    padding: 30px;
-    color: #e2e8f0;
-}
-
-.terminal-content h1.hero-title {
-    color: #68d391;
-}
-
-.terminal-content h2.hero-subtitle {
-    color: #63b3ed;
-}
-
-.terminal-content p.hero-description {
-    color: #a0aec0;
-}
-
-.terminal-content .btn-primary {
-    background-color: #48bb78;
-    border-color: #48bb78;
-}
-
-.terminal-content .btn-primary:hover {
-    background-color: #38a169;
-    border-color: #38a169;
-}
-
-.terminal-content .btn-secondary {
-    background-color: transparent;
-    color: #4299e1;
-    border-color: #4299e1;
-}
-
-.terminal-content .btn-secondary:hover {
-    background-color: #4299e1;
-    color: var(--white);
-}
-
-.devops-visual {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-left: 40px;
-}
-
-.pipeline-animation {
-    display: flex;
-    align-items: center;
-    background: rgba(31, 41, 55, 0.8);
-    padding: 15px;
-    border-radius: 8px;
-    width: 100%;
-    justify-content: center;
-}
-
-.pipeline-stage {
-    background: #4f46e5;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 0.9rem;
-    min-width: 70px;
-    text-align: center;
-}
-
-.pipeline-arrow {
-    color: #9ca3af;
-    font-size: 1.2rem;
-    margin: 0 8px;
-}
-
-.infrastructure-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    width: 100%;
-    max-width: 300px;
-}
-
-.grid-node {
-    background: #10b981;
-    color: white;
-    padding: 10px;
-    border-radius: 4px;
-    text-align: center;
-    font-family: monospace;
-    font-size: 0.8rem;
-    animation: pulse 2s infinite;
-}
-
-.grid-node.server {
-    background: #8b5cf6;
-}
-
-.grid-node.container {
-    background: #ec4899;
-}
-
-.grid-node.cloud {
-    background: #3b82f6;
-}
-
-.grid-node.k8s {
-    background: #f59e0b;
-}
-
-.grid-connection {
-    grid-column: 1 / -1;
-    height: 2px;
-    background: #9ca3af;
-    animation: slide 3s infinite linear;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-}
-
-@keyframes slide {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(50%); }
-}
-
-.pipeline-stage {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  flex: 1;
+  max-width: 600px;
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-    text-align: left;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
 }
 
 .hero-subtitle {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-light);
-    font-weight: 500;
-    text-align: left;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+  font-weight: 500;
+  opacity: 0.9;
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    color: var(--text-light);
-    line-height: 1.8;
-    text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  max-width: 600px;
 }
 
 .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
-/* Обо мне */
+/* DevOps визуализация */
+.devops-visual {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.pipeline-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pipeline-title {
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.pipeline-stages {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pipeline-stage {
+  background: linear-gradient(135deg, var(--devops-blue) 0%, var(--devops-purple) 100%);
+  color: var(--white);
+  padding: 1rem 0.8rem;
+  border-radius: var(--border-radius-sm);
+  font-family: monospace;
+  font-size: 0.8rem;
+  min-width: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+.pipeline-stage.build {
+  background: linear-gradient(135deg, var(--devops-green) 0%, var(--devops-blue) 100%);
+}
+
+.pipeline-stage.test {
+  background: linear-gradient(135deg, var(--devops-orange) 0%, var(--devops-green) 100%);
+}
+
+.pipeline-stage.deploy {
+  background: linear-gradient(135deg, var(--devops-purple) 0%, var(--devops-red) 100%);
+}
+
+.pipeline-stage.monitor {
+  background: linear-gradient(135deg, var(--devops-gray) 0%, var(--devops-blue) 100%);
+}
+
+.pipeline-arrow {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+}
+
+.infrastructure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-lg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.grid-node {
+  background: linear-gradient(135deg, var(--devops-blue) 0%, var(--devops-purple) 100%);
+  color: white;
+  padding: 0.8rem;
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  font-family: monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: pulse 2s infinite;
+}
+
+.grid-node.server {
+  background: linear-gradient(135deg, var(--devops-green) 0%, var(--devops-blue) 100%);
+}
+
+.grid-node.container {
+  background: linear-gradient(135deg, var(--devops-orange) 0%, var(--devops-green) 100%);
+}
+
+.grid-node.cloud {
+  background: linear-gradient(135deg, var(--devops-purple) 0%, var(--devops-blue) 100%);
+}
+
+.grid-node.k8s {
+  background: linear-gradient(135deg, var(--devops-gray) 0%, var(--devops-purple) 100%);
+}
+
+.grid-connection {
+  grid-column: 1 / -1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  animation: slide 3s infinite linear;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes slide {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(50%); }
+}
+
+/* Секция "Обо мне" */
 .about {
-    padding: 100px 0;
-    background-color: var(--white);
+  padding: 120px 0;
+  background-color: var(--white);
+  position: relative;
 }
 
 .about-content {
-    display: flex;
-    gap: 4rem;
-    align-items: flex-start;
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
 }
 
 .about-text {
-    flex: 2;
-    font-size: 1.1rem;
-    line-height: 1.8;
+  flex: 2;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
 }
 
 .about-highlights {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .highlight-card {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    border-left: 4px solid var(--primary-color);
-    transition: transform 0.3s ease;
+  background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  border-left: 4px solid var(--fintech-primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--medium-gray);
+}
+
+.highlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
 }
 
 .highlight-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-heavy);
 }
 
 .highlight-card h3 {
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-    font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--fintech-primary);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
 }
 
-/* Навыки */
+.highlight-card h3 i {
+  margin-right: 10px;
+  color: var(--fintech-primary);
+}
+
+.highlight-card p {
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+/* Секция "Навыки" */
 .skills {
-    padding: 100px 0;
-    background-color: var(--secondary-color);
+  padding: 120px 0;
+  background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
 }
 
 .skill-category {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--medium-gray);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
 }
 
 .skill-category:hover {
-    transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-heavy);
 }
 
 .skill-category h3 {
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-    font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--fintech-primary);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.skill-category h3 i {
+  margin-right: 12px;
+  color: var(--fintech-primary);
 }
 
 .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .skill-tag {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
+  color: var(--white);
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-light);
 }
 
 .skill-tag:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-medium);
 }
 
-/* Опыт работы */
+.skill-tag i {
+  margin-right: 6px;
+  font-size: 0.8rem;
+}
+
+/* Секция "Опыт работы" */
 .experience {
-    padding: 100px 0;
-    background-color: var(--white);
+  padding: 120px 0;
+  background-color: var(--white);
 }
 
 .timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .timeline::before {
-    content: '';
-    position: absolute;
-    left: 30px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--primary-light);
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--fintech-primary), var(--fintech-secondary));
+  border-radius: 2px;
 }
 
 .timeline-item {
-    position: relative;
-    margin-bottom: 3rem;
-    padding-left: 80px;
+  position: relative;
+  margin-bottom: 4rem;
+  padding-left: 80px;
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 22px;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    border: 3px solid var(--white);
-    z-index: 1;
+  content: '';
+  position: absolute;
+  left: 21px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--fintech-secondary);
+  border: 3px solid var(--white);
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--fintech-primary);
 }
 
 .timeline-content {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--medium-gray);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
 }
 
 .timeline-content:hover {
-    transform: translateX(10px);
+  transform: translateX(10px);
+  box-shadow: var(--shadow-heavy);
 }
 
 .timeline-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.4rem;
+  color: var(--fintech-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-content h3 i {
+  margin-right: 10px;
+  color: var(--fintech-primary);
 }
 
 .timeline-content h4 {
-    color: var(--text-light);
-    font-weight: 500;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+  color: var(--text-light);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
 .timeline-content p {
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
 }
 
 .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
 }
 
 .tech-tags span {
-    background-color: var(--primary-light);
-    color: var(--white);
-    padding: 0.4rem 1rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
+  background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-light);
 }
 
-/* Образование */
+.tech-tags span i {
+  margin-right: 5px;
+  font-size: 0.7rem;
+}
+
+/* Секция "Образование" */
 .education {
-    padding: 100px 0;
-    background-color: var(--secondary-color);
+  padding: 120px 0;
+  background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
 }
 
 .education-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
 }
 
 .education-card {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--medium-gray);
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--fintech-success) 0%, var(--fintech-info) 100%);
 }
 
 .education-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-heavy);
 }
 
 .education-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+  color: var(--fintech-primary);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.education-card h3 i {
+  margin-right: 12px;
+  color: var(--fintech-success);
 }
 
 .education-card p {
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-    font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  font-style: italic;
 }
 
 .skills-learned {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
 }
 
 .skills-learned span {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 0.4rem 1rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
+  background: linear-gradient(135deg, var(--fintech-info) 0%, var(--fintech-success) 100%);
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-light);
 }
 
-/* Контакты */
+.skills-learned span i {
+  margin-right: 5px;
+  font-size: 0.7rem;
+}
+
+/* Секция "Контакты" */
 .contact {
-    padding: 100px 0;
-    background-color: var(--white);
+  padding: 120px 0;
+  background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-secondary) 100%);
+  color: var(--white);
 }
 
 .contact-content {
-    display: flex;
-    gap: 4rem;
+  display: flex;
+  gap: 4rem;
 }
 
 .contact-info {
-    flex: 1;
+  flex: 1;
 }
 
 .contact-item {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background-color: var(--secondary-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-light);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .contact-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-item h3 i {
+  margin-right: 12px;
+  color: var(--fintech-info);
+}
+
+.contact-item p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
 }
 
 .contact-links {
-    flex: 1;
+  flex: 1;
 }
 
 .contact-links h3 {
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
+  margin-bottom: 2rem;
+  color: var(--white);
+  font-size: 1.5rem;
 }
 
 .link-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.8rem;
 }
 
 .link-item {
-    background-color: var(--secondary-color);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.8rem;
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  flex-direction: column;
 }
 
 .link-item:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-    transform: translateY(-5px);
+  background: linear-gradient(135deg, var(--fintech-secondary) 0%, var(--fintech-primary) 100%);
+  color: var(--white);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.link-item i {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: var(--white);
 }
 
 /* Футер */
 .footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 2rem 0;
-    text-align: center;
+  background-color: var(--fintech-primary);
+  color: var(--white);
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+
+.footer p {
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--fintech-info);
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--white);
 }
 
 /* Адаптивность */
 @media (max-width: 992px) {
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .contact-content {
-        flex-direction: column;
-    }
-    
-    .hero-title {
-        font-size: 3rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-    
-    .hero-content {
-        max-width: 100%;
-        text-align: center;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .contact-content {
+    flex-direction: column;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--white);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
-        gap: 0;
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .nav-link {
-        display: block;
-        padding: 1rem;
-        width: 100%;
-    }
-    
-    .nav-toggle {
-        display: flex;
-    }
-    
-    .hero {
-        padding: 140px 0 80px;
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.3rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .btn {
-        width: 100%;
-        max-width: 250px;
-    }
-    
-    .timeline::before {
-        left: 20px;
-    }
-    
-    .timeline-item {
-        padding-left: 60px;
-    }
-    
-    .timeline-item::before {
-        left: 12px;
-    }
-    
-    .skills-grid,
-    .education-grid {
-        grid-template-columns: 1fr;
-    }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 2rem 0;
+    gap: 0;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  .nav-toggle {
+    display: flex;
+  }
+  
+  .hero {
+    padding: 160px 0 100px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    padding-left: 60px;
+  }
+  
+  .timeline-item::before {
+    left: 12px;
+  }
+  
+  .skills-grid,
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .section-title {
-        font-size: 1.5rem;
-    }
-    
-    .timeline-content {
-        padding: 1.5rem;
-    }
-    
-    .link-grid {
-        grid-template-columns: 1fr;
-    }
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .timeline-content {
+    padding: 1.5rem;
+  }
+  
+  .link-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-buttons {
+    gap: 1rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }
