@@ -33,54 +33,53 @@
             <h1>Контакты</h1>
             <p>Если у вас есть вопросы или вам нужна помощь, свяжитесь с нами любым удобным способом.</p>
             
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Контактная информация</h3>
-                    <ul>
-                        <li>
-                            <strong>Единый телефон:</strong>
-                            <a href="tel:88002007888">8 (800) 200-78-88</a>
-                        </li>
-                        <li>
-                            <strong>Для международных звонков:</strong>
-                            <a href="tel:+74957348080">+7 (495) 734-80-80</a>
-                        </li>
-                        <li>
-                            <strong>Email:</strong>
-                            <a href="mailto:info@vtb.ru">info@vtb.ru</a>
-                        </li>
-                        <li>
-                            <strong>Адрес головного офиса:</strong>
-                            Москва, ул. Неглинная, 15
-                        </li>
-                        <li>
-                            <strong>График работы:</strong>
-                            Пн-Пт: 9:00-18:00, Сб-Вс: 10:00-16:00
-                        </li>
-                        <li>
-                            <strong>Онлайн-поддержка:</strong>
-                            <a href="#" target="_blank">Чат в интернет-банке</a>
-                        </li>
-                    </ul>
+            <div class="contact-wrapper">
+            <div class="contact-main">
+                <h3>Контактная информация</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="contact-label"><strong>Единый телефон:</strong></span>
+                        <span class="contact-value"><a href="tel:88002007888"><strong>8 (800) 200-78-88</strong></a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label"><strong>Для международных звонков:</strong></span>
+                        <span class="contact-value"><a href="tel:+74957348080"><strong>+7 (495) 734-80-80</strong></a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label"><strong>Email:</strong></span>
+                        <span class="contact-value"><a href="mailto:info@vtb.ru"><strong>info@vtb.ru</strong></a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label"><strong>Адрес головного офиса:</strong></span>
+                        <span class="contact-value"><strong>Москва, ул. Неглинная, 15</strong></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label"><strong>График работы:</strong></span>
+                        <span class="contact-value"><strong>Пн-Пт: 9:00-18:00, Сб-Вс: 10:00-16:00</strong></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label"><strong>Онлайн-поддержка:</strong></span>
+                        <span class="contact-value"><a href="#" target="_blank"><strong>Чат в интернет-банке</strong></a></span>
+                    </div>
                 </div>
                 
-                <div class="contact-form">
+                <div class="feedback-section">
                     <h3>Обратная связь</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Имя</label>
+                            <label for="name"><strong>Имя</strong></label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email"><strong>Email</strong></label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Тема обращения</label>
+                            <label for="subject"><strong>Тема обращения</strong></label>
                             <input type="text" id="subject" name="subject" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Сообщение</label>
+                            <label for="message"><strong>Сообщение</strong></label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
                         <button type="submit" class="vtb-button">Отправить</button>
