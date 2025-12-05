@@ -1,4 +1,20 @@
 ```
-# No build artifacts, dependencies, or temporary files detected
-# Only source/config files present (.txt files)
+# System files
+*.log
+*.tmp
+*.swp
+
+# Configuration and cache files
+.config/
+.cache/
+.local/share/
+
+# Desktop entries
+*.desktop
+
+# User data files
+contacts.txt
+career_experience.txt
+education.txt
+profile_summary.txt
 ```
