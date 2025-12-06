@@ -247,7 +247,78 @@
             border-radius: 2px;
         }
 
-        /* Cards */
+        /* Flip Cards */
+        .flip-card {
+            background: transparent;
+            width: 100%;
+            height: 280px;
+            perspective: 1000px;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+        }
+
+        .flip-card:hover .flip-card-inner,
+        .flip-card:focus-within .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .flip-card-front {
+            color: var(--dark);
+        }
+
+        .flip-card-back {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+
+        .flip-card-back h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .flip-card-back .example-item {
+            margin: 0.8rem 0;
+            text-align: left;
+            width: 100%;
+        }
+
+        .flip-card-back .example-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.3rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
         .card {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
@@ -479,73 +550,358 @@
             <div class="card">
                 <h3 style="margin: 1.5rem 0 1rem 0; color: var(--primary);">Общий опыт:</h3>
                 <div class="features-grid">
-                    <div class="card">
-                        <h3>DevOps-инженер</h3>
-                        <p>Я DevOps-инженер с более чем 9-летним опытом работы в финансовых структурах, специализируюсь на построении надежных, безопасных и автоматизированных систем.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>DevOps-инженер</h3>
+                                <p>Я DevOps-инженер с более чем 9-летним опытом работы в финансовых структурах, специализируюсь на построении надежных, безопасных и автоматизированных систем.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Профессиональный DevOps-инженер с опытом в финансовой сфере</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Финансовые структуры требуют особого подхода к безопасности и надежности</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Использую современные практики DevOps и инструменты для обеспечения стабильности</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Экспертиза</h3>
-                        <p>Моя экспертиза включает в себя проектирование, внедрение и поддержку инфраструктуры для высоконагруженных финансовых приложений.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Экспертиза</h3>
+                                <p>Моя экспертиза включает в себя проектирование, внедрение и поддержку инфраструктуры для высоконагруженных финансовых приложений.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Проектирование и поддержка инфраструктуры для финансовых приложений</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Финансовые приложения требуют высокой доступности и безопасности</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Использую архитектурные решения, обеспечивающие масштабируемость и отказоустойчивость</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Архитектурные предпочтения</h3>
-                        <p>Предпочитаю архитектуру самоисполняемых микросервисов (например, Core API + дополнительные сервисы на nginx) стандартным сервисам на IIS + .NET.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Архитектурные предпочтения</h3>
+                                <p>Предпочитаю архитектуру самоисполняемых микросервисов (например, Core API + дополнительные сервисы на nginx) стандартным сервисам на IIS + .NET.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Архитектура самоисполняемых микросервисов</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Микросервисы обеспечивают лучшую масштабируемость и изоляцию</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Использую Core API с nginx для управления запросами и балансировкой нагрузки</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Стратегия деплоя</h3>
-                        <p>Отдаю предпочтение стратегии деплоя blue-green обычному стеку test + dev + prod.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Стратегия деплоя</h3>
+                                <p>Отдаю предпочтение стратегии деплоя blue-green обычному стеку test + dev + prod.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Стратегия деплоя blue-green</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Обеспечивает нулевое время простоя при обновлениях</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Поддерживаю две идентичные продакшен-среды, переключая трафик между ними</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Непрерывное обучение</h3>
-                        <p>Постоянно слежу за новыми технологиями и подходами в DevOps, активно применяю передовые практики CI/CD для повышения эффективности и надежности систем.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Непрерывное обучение</h3>
+                                <p>Постоянно слежу за новыми технологиями и подходами в DevOps, активно применяю передовые практики CI/CD для повышения эффективности и надежности систем.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Применение передовых практик CI/CD</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Новые технологии повышают эффективность и надежность систем</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Интегрирую современные инструменты в процесс разработки и деплоя</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Управление рисками</h3>
-                        <p>Разрабатываю и внедряю стратегии управления инфраструктурными рисками, включая резервное копирование, восстановление после сбоев и планирование непрерывности бизнеса.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Управление рисками</h3>
+                                <p>Разрабатываю и внедряю стратегии управления инфраструктурными рисками, включая резервное копирование, восстановление после сбоев и планирование непрерывности бизнеса.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Стратегии управления инфраструктурными рисками</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Финансовые структуры требуют максимальной надежности</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Реализую планы резервного копирования и восстановления</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Использование инструментов ИИ</h3>
-                        <p>Активно использую современные инструменты искусственного интеллекта для автоматизации задач мониторинга, анализа логов и выявления аномалий в работе систем.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Использование инструментов ИИ</h3>
+                                <p>Активно использую современные инструменты искусственного интеллекта для автоматизации задач мониторинга, анализа логов и выявления аномалий в работе систем.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Инструменты ИИ для мониторинга и анализа</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>ИИ помогает быстрее выявлять проблемы и аномалии</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Интегрирую ИИ-алгоритмы в систему мониторинга для предиктивного анализа</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Разработка собственных решений</h3>
-                        <p>Разрабатываю и внедряю внутренние инструменты и решения для оптимизации процессов, повышения надежности и упрощения сопровождения инфраструктуры.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Разработка собственных решений</h3>
+                                <p>Разрабатываю и внедряю внутренние инструменты и решения для оптимизации процессов, повышения надежности и упрощения сопровождения инфраструктуры.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Внутренние инструменты для автоматизации</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Специфические требования финансовой сферы</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Разрабатываю решения под конкретные бизнес-процессы</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>S3-решения</h3>
-                        <p>Использую объектное хранилище S3 для хранения бэкапов, архивации данных и организации отказоустойчивого доступа к файлам в распределенных системах.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>S3-решения</h3>
+                                <p>Использую объектное хранилище S3 для хранения бэкапов, архивации данных и организации отказоустойчивого доступа к файлам в распределенных системах.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Объектное хранилище S3</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Надежное и масштабируемое решение для хранения данных</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Интегрирую S3 в архитектуру для обеспечения отказоустойчивости</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <h3 style="margin: 1.5rem 0 1rem 0; color: var(--primary);">Ключевые компетенции:</h3>
                 <div class="features-grid">
-                    <div class="card">
-                        <h3>Финансовая безопасность</h3>
-                        <p>Реализация строгих мер безопасности, соответствующих требованиям финансового сектора, включая PCI DSS, SOX и другие регулятивные стандарты.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Финансовая безопасность</h3>
+                                <p>Реализация строгих мер безопасности, соответствующих требованиям финансового сектора, включая PCI DSS, SOX и другие регулятивные стандарты.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Реализация мер безопасности для финансового сектора</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Финансовые данные требуют максимальной защиты</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Применяю стандарты PCI DSS, SOX и другие регулятивные требования</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Высокая доступность</h3>
-                        <p>Проектирование и поддержка систем с 99.99% доступности, критически важных для финансовых операций.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Высокая доступность</h3>
+                                <p>Проектирование и поддержка систем с 99.99% доступности, критически важных для финансовых операций.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Системы с 99.99% доступности</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Финансовые операции не терпят простоев</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Использую резервирование, балансировку и мониторинг</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Мониторинг и аудит</h3>
-                        <p>Внедрение комплексных решений для мониторинга, аудита и логирования, необходимых для финансового сектора.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Мониторинг и аудит</h3>
+                                <p>Внедрение комплексных решений для мониторинга, аудита и логирования, необходимых для финансового сектора.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Комплексные решения для мониторинга и аудита</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Финансовый сектор требует полной прозрачности операций</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Использую ELK Stack, Grafana, Prometheus и другие инструменты</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <h3 style="margin: 1.5rem 0 1rem 0; color: var(--primary);">Используемые инструменты:</h3>
                 <div class="features-grid">
-                    <div class="card">
-                        <h3>Kubernetes</h3>
-                        <p>Оркестрация контейнеров, управление кластерами, деплои и автомасштабирование.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Kubernetes</h3>
+                                <p>Оркестрация контейнеров, управление кластерами, деплои и автомасштабирование.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Оркестрация контейнеров с помощью Kubernetes</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Для управления масштабируемыми и отказоустойчивыми приложениями</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Создаю и управляю кластерами, деплою приложения, настраиваю автомасштабирование</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Grafana & Prometheus</h3>
-                        <p>Мониторинг, визуализация метрик, дашборды и алертинг.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Grafana & Prometheus</h3>
+                                <p>Мониторинг, визуализация метрик, дашборды и алертинг.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Мониторинг и визуализация метрик</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Для оперативного реагирования на проблемы в системе</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Настройка дашбордов и алертинга для отслеживания состояния инфраструктуры</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Ansible & Docker</h3>
-                        <p>Автоматизация инфраструктуры, конфигурационное управление, контейнеризация.</p>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Ansible & Docker</h3>
+                                <p>Автоматизация инфраструктуры, конфигурационное управление, контейнеризация.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Примеры</h3>
+                                <div class="example-item">
+                                    <span class="example-label">Что:</span>
+                                    <p>Автоматизация инфраструктуры с Ansible и Docker</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Почему:</span>
+                                    <p>Для обеспечения стабильности и повторяемости сред</p>
+                                </div>
+                                <div class="example-item">
+                                    <span class="example-label">Как:</span>
+                                    <p>Использую Ansible для управления конфигурациями и Docker для контейнеризации</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
