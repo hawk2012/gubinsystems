@@ -121,6 +121,18 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
     
+    // Add click functionality for flip cards
+    const flipCards = document.querySelectorAll('.flip-card');
+    flipCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Only flip if the click is not on a link or button
+            if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
+                const flipCardInner = this.querySelector('.flip-card-inner');
+                flipCardInner.style.transform = flipCardInner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+            }
+        });
+    });
+    
     // Load blog posts from tenchat.ru/mgubin
     loadBlogPosts();
 });
