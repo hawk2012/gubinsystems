@@ -6,6 +6,7 @@ __pycache__/
 *.obj
 dist/
 build/
+target/
 *.class
 *.exe
 *.dll
@@ -17,10 +18,9 @@ build/
 .venv/
 venv/
 node_modules/
-target/
-.gradle/
 .mypy_cache/
 .pytest_cache/
+.gradle/
 julia-*/
 zig*/
 
