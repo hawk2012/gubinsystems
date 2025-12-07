@@ -1,17 +1,17 @@
 ```
+# Dependencies
+node_modules/
+
 # Build artifacts
 build/
 dist/
 
-# Dependencies
-node_modules/
-
 # Environment
 .env
 .env.local
-*.env.*
+.env.*
 
-# Editor/IDE
+# Editor/IDE files
 .vscode/
 .idea/
 *.swp
@@ -21,23 +21,21 @@ node_modules/
 # Logs
 *.log
 
-# System files
-.DS_Store
-Thumbs.db
-
-# Cache directories
+# Python cache (if present)
 __pycache__/
 *.pyc
-.mypy_cache/
-.pytest_cache/
+*.pyo
+*.pyd
+
+# Coverage reports
 coverage/
 htmlcov/
 *.coverage
 
-# Compressed files
+# Distribution / packaging
+*.tar
 *.zip
 *.gz
-*.tar
 *.tgz
 *.bz2
 *.xz
