@@ -7,15 +7,10 @@ const PORT = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Routes for serving assets through Node.js
-app.get('/css/style.css', (req, res) => {
-    res.sendFile(path.join(__dirname, 'assets', 'css', 'style.css'));
-});
+// Serve static files
+app.use(express.static(path.join(__dirname, 'assets')));
 
-app.get('/js/main.js', (req, res) => {
-    res.sendFile(path.join(__dirname, 'assets', 'js', 'main.js'));
-});
-
+// Additional routes for specific assets if needed
 app.get('/devops.pdf', (req, res) => {
     res.sendFile(path.join(__dirname, 'assets', 'devops.pdf'));
 });
