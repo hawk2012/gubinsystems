@@ -28,25 +28,65 @@
             </section>
 
             <section class="kb-content">
-                <h2>Введение</h2>
-                <p>В этой статье рассматриваются основы работы с кластерами Kubernetes.</p>
-                
-                <h2>Что такое кластер Kubernetes</h2>
-                <p>Кластер Kubernetes - это группа физических или виртуальных машин (называемых узлами), на которых Kubernetes устанавливает контейнеризованные приложения.</p>
-                
-                <h2>Компоненты кластера</h2>
-                <p>Кластер Kubernetes состоит из управляющих узлов (control plane) и рабочих узлов (worker nodes).</p>
-                
-                <h2>Основные концепции</h2>
-                <ul>
-                    <li>Pods</li>
-                    <li>Services</li>
-                    <li>Deployments</li>
-                    <li>Namespaces</li>
-                </ul>
-                
-                <h2>Практические примеры</h2>
-                <p>Примеры команд и конфигураций для работы с кластерами Kubernetes.</p>
+                <div class="terminal-content">
+                    <div class="terminal-text">
+                        <div class="terminal-h1">Основы работы с кластерами Kubernetes</div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Что такое кластер Kubernetes</div>
+                            <div class="terminal-p">Кластер Kubernetes - это группа физических или виртуальных машин (называемых узлами), на которых Kubernetes устанавливает контейнеризованные приложения. Кластер может содержать как один, так и тысячи узлов.</div>
+                            <div class="terminal-p">Когда вы запускаете приложения в кластере Kubernetes, вы управляете ими как логической группой ресурсов, а не как отдельными машинами.</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Компоненты кластера</div>
+                            <div class="terminal-h3">Control Plane (плоскость управления)</div>
+                            <div class="terminal-p">Control Plane отвечает за принятие решений о кластере и за выполнение действий по плоскости управления. Control Plane отвечает за управление кластером, планирование работы приложений и обеспечение желаемого состояния кластера.</div>
+                            
+                            <div class="terminal-h3">Worker Nodes (рабочие узлы)</div>
+                            <div class="terminal-p">Worker Nodes - это рабочие машины, которые запускают приложения. Каждый узел может содержать один или несколько Pod'ов, которые являются минимальной единицей развертывания в Kubernetes.</div>
+                            
+                            <div class="terminal-h3">Основные компоненты Control Plane:</div>
+                            <div class="terminal-p">- <span class="terminal-command">kube-apiserver</span> - API сервер, основной интерфейс для управления кластером</div>
+                            <div class="terminal-p">- <span class="terminal-command">etcd</span> - распределенное хранилище конфигурации кластера</div>
+                            <div class="terminal-p">- <span class="terminal-command">kube-scheduler</span> - планировщик, который определяет, где запускать новые Pod'ы</div>
+                            <div class="terminal-p">- <span class="terminal-command">kube-controller-manager</span> - контроллеры, которые управляют состоянием кластера</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Основные концепции</div>
+                            <div class="terminal-h3">Pods</div>
+                            <div class="terminal-p">Pod - это наименьшая единица развертывания в Kubernetes. Pod может содержать один или несколько контейнеров, которые разделяют ресурсы хранения и IP-адрес.</div>
+                            
+                            <div class="terminal-h3">Services</div>
+                            <div class="terminal-p">Service - это абстракция, которая определяет логическое объединение набора Pod'ов и политику доступа к ним. Service обеспечивает стабильный IP-адрес и DNS-имя для набора Pod'ов.</div>
+                            
+                            <div class="terminal-h3">Deployments</div>
+                            <div class="terminal-p">Deployment - это объект, который управляет состоянием Pod'ов и ReplicaSet'ов. Deployment позволяет объявить желаемое состояние приложения и гарантирует, что Pod'ы будут работать в соответствии с этим состоянием.</div>
+                            
+                            <div class="terminal-h3">Namespaces</div>
+                            <div class="terminal-p">Namespace - это виртуальное разделение ресурсов кластера. Namespace позволяет нескольким виртуальным кластерам работать в одном физическом кластере.</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Практические примеры</div>
+                            <div class="terminal-p">Для работы с кластером Kubernetes используется утилита <span class="terminal-command">kubectl</span>:</div>
+                            
+                            <div class="terminal-pre">
+kubectl get nodes          # Получить список узлов кластера
+kubectl get pods           # Получить список Pod'ов
+kubectl get services       # Получить список сервисов
+kubectl get deployments    # Получить список деплойментов
+kubectl describe node &lt;имя_узла&gt;  # Подробная информация об узле
+                            </div>
+                            
+                            <div class="terminal-p">Для проверки статуса кластера можно использовать команду:</div>
+                            <div class="terminal-pre">
+kubectl cluster-info       # Показать информацию о кластере
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
 

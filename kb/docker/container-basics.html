@@ -28,30 +28,76 @@
             </section>
 
             <section class="kb-content">
-                <h2>Введение</h2>
-                <p>В этой статье рассматриваются основы работы с контейнерами Docker.</p>
-                
-                <h2>Что такое контейнеры</h2>
-                <p>Контейнеры - это легковесная виртуализация на уровне операционной системы, позволяющая упаковать приложение и все его зависимости в изолированную среду.</p>
-                
-                <h2>Преимущества контейнеров</h2>
-                <ul>
-                    <li>Портативность между окружениями</li>
-                    <li>Быстрый запуск и остановка</li>
-                    <li>Экономия ресурсов</li>
-                    <li>Изоляция приложений</li>
-                </ul>
-                
-                <h2>Архитектура Docker</h2>
-                <p>Docker использует клиент-серверную архитектуру, где Docker daemon управляет образами, контейнерами, сетями и томами.</p>
-                
-                <h2>Основные команды</h2>
-                <ul>
-                    <li>docker run - запуск контейнера</li>
-                    <li>docker ps - список запущенных контейнеров</li>
-                    <li>docker images - список образов</li>
-                    <li>docker build - сборка образа</li>
-                </ul>
+                <div class="terminal-content">
+                    <div class="terminal-text">
+                        <div class="terminal-h1">Основы работы с контейнерами</div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Что такое контейнеры</div>
+                            <div class="terminal-p">Контейнеры - это легковесная виртуализация на уровне операционной системы, позволяющая упаковать приложение и все его зависимости в изолированную среду. В отличие от виртуальных машин, контейнеры разделяют ядро хостовой операционной системы, что делает их более эффективными по использованию ресурсов.</div>
+                            <div class="terminal-p">Контейнеры обеспечивают изоляцию процессов, файловой системы, сетевых интерфейсов и пространства имен, позволяя запускать приложения в предсказуемой и стабильной среде.</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Преимущества контейнеров</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Портативность между окружениями</span> - контейнеры могут работать на любой системе с поддержкой Docker, обеспечивая консистентность между разработкой, тестированием и продакшеном</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Быстрый запуск и остановка</span> - контейнеры запускаются за секунды, так как не требуют загрузки полной операционной системы</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Экономия ресурсов</span> - контейнеры потребляют меньше ресурсов по сравнению с виртуальными машинами</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Изоляция приложений</span> - каждое приложение работает в изолированной среде, что повышает безопасность и стабильность</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Масштабируемость</span> - легко масштабировать приложения путем запуска дополнительных экземпляров контейнеров</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Архитектура Docker</div>
+                            <div class="terminal-p">Docker использует клиент-серверную архитектуру, где Docker daemon (dockerd) управляет образами, контейнерами, сетями и томами. Клиент (docker) взаимодействует с daemon через REST API.</div>
+                            
+                            <div class="terminal-h3">Основные компоненты Docker:</div>
+                            <div class="terminal-p">- <span class="terminal-command">Docker Daemon (dockerd)</span> - фоновый процесс, который управляет Docker объектами</div>
+                            <div class="terminal-p">- <span class="terminal-command">Docker Client (docker)</span> - командная утилита, которая позволяет пользователям взаимодействовать с Docker daemon</div>
+                            <div class="terminal-p">- <span class="terminal-command">Docker Images</span> - неизменяемые файлы, содержащие приложение и его зависимости</div>
+                            <div class="terminal-p">- <span class="terminal-command">Docker Containers</span> - запущенные экземпляры Docker images</div>
+                            <div class="terminal-p">- <span class="terminal-command">Docker Registry</span> - репозиторий для хранения Docker images (например, Docker Hub)</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Основные команды Docker</div>
+                            <div class="terminal-pre">
+docker run &lt;image&gt;           # Запуск контейнера из образа
+docker ps                  # Список запущенных контейнеров
+docker ps -a               # Список всех контейнеров
+docker images              # Список локальных образов
+docker build -t &lt;tag&gt; .      # Сборка образа из Dockerfile
+docker pull &lt;image&gt;          # Загрузка образа из registry
+docker push &lt;image&gt;          # Загрузка образа в registry
+docker stop &lt;container&gt;      # Остановка контейнера
+docker rm &lt;container&gt;        # Удаление контейнера
+docker rmi &lt;image&gt;           # Удаление образа
+docker exec -it &lt;container&gt; bash  # Вход в запущенный контейнер
+                            </div>
+                            
+                            <div class="terminal-h3">Примеры использования:</div>
+                            <div class="terminal-p">Запуск контейнера с Nginx:</div>
+                            <div class="terminal-pre">
+docker run --name my-nginx -p 8080:80 -d nginx
+                            </div>
+                            
+                            <div class="terminal-p">Запуск интерактивного контейнера Ubuntu:</div>
+                            <div class="terminal-pre">
+docker run -it ubuntu:20.04 bash
+                            </div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Жизненный цикл контейнера</div>
+                            <div class="terminal-p">Контейнер проходит через несколько состояний в процессе своей жизни:</div>
+                            <div class="terminal-p">1. <span class="terminal-command">Создание</span> - контейнер создается из Docker image</div>
+                            <div class="terminal-p">2. <span class="terminal-command">Запуск</span> - контейнер запускается и начинает выполнение процесса</div>
+                            <div class="terminal-p">3. <span class="terminal-command">Работа</span> - контейнер выполняет свои задачи</div>
+                            <div class="terminal-p">4. <span class="terminal-command">Остановка</span> - контейнер останавливается по команде или по завершении процесса</div>
+                            <div class="terminal-p">5. <span class="terminal-command">Удаление</span> - контейнер может быть удален, освобождая ресурсы</div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
 
