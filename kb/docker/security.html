@@ -28,49 +28,47 @@
             </section>
 
             <section class="kb-content">
-                <h2>Введение</h2>
-                <p>В этой статье рассматриваются аспекты безопасности при работе с Docker.</p>
-                
-                <h2>Основные угрозы безопасности</h2>
-                <ul>
-                    <li>Уязвимости в образах</li>
-                    <li>Привилегированные контейнеры</li>
-                    <li>Небезопасные сети</li>
-                    <li>Неправильные разрешения</li>
-                    <li>Утечка данных между контейнерами</li>
-                </ul>
-                
-                <h2>Меры безопасности</h2>
-                <ul>
-                    <li>Запуск контейнеров от непривилегированного пользователя</li>
-                    <li>Использование read-only root файловой системы</li>
-                    <li>Ограничение возможностей контейнера (capabilities)</li>
-                    <li>Сканирование образов на уязвимости</li>
-                    <li>Использование безопасных базовых образов</li>
-                </ul>
-                
-                <h2>Политики безопасности</h2>
-                <p>Использование Docker Content Trust, настройка безопасных реестров, политики для Kubernetes (если используется).</p>
-                
-                <h2>Мониторинг безопасности</h2>
-                <p>Инструменты для мониторинга безопасности контейнеров и образов.</p>
+                <div class="terminal-content">
+                    <div class="terminal-text">
+                        <div class="terminal-h1">Безопасность в Docker</div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Введение</div>
+                            <div class="terminal-p">В этой статье рассматриваются аспекты безопасности при работе с Docker.</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Основные угрозы безопасности</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Уязвимости в образах</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Привилегированные контейнеры</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Небезопасные сети</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Неправильные разрешения</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Утечка данных между контейнерами</span></div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Меры безопасности</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Запуск контейнеров от непривилегированного пользователя</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Использование read-only root файловой системы</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Ограничение возможностей контейнера (capabilities)</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Сканирование образов на уязвимости</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Использование безопасных базовых образов</span></div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Политики безопасности</div>
+                            <div class="terminal-p">Использование Docker Content Trust, настройка безопасных реестров, политики для Kubernetes (если используется).</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Мониторинг безопасности</div>
+                            <div class="terminal-p">Инструменты для мониторинга безопасности контейнеров и образов.</div>
+                        </div>
+                    </div>
+                </div>
             </section>
                 </main>
 
-        <!-- Terminal component -->
-        <section class="kb-content">
-            <div class="terminal-component">
-                <span class="prompt">devops@mikhail:~$ </span>
-                <div class="terminal-commands">
-                    <div class="command">kubectl apply -f deployment.yaml</div>
-                    <div class="command">docker build -t app:latest .</div>
-                    <div class="command">ansible-playbook deploy.yml</div>
-                    <div class="command">terraform apply</div>
-                    <div class="command">git push origin main</div>
-                    <div class="command">kubectl rollout restart deployment/app</div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <script src="../../js/script.js"></script>
