@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Справочник - DevOps инженер Михаил Губин</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="container">
+        <!-- Header with navigation -->
+        <header>
+            <div class="nav">
+                <a href="../"><i class="icon">🏠</i> На главную</a>
+                <a href="./"><i class="icon">📚</i> Справочник</a>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <section class="kb-hero">
+                <h1>Справочник</h1>
+                <p class="subtitle">Полезные материалы по DevOps и связанным технологиям</p>
+            </section>
+
+            <section class="kb-categories">
+                <h2>Категории</h2>
+                <div class="kb-grid">
+                    <div class="kb-card">
+                        <h3>Kubernetes</h3>
+                        <p>Руководства и лучшие практики по работе с контейнерами и оркестрацией</p>
+                        <a href="kubernetes.html" class="card-link">Перейти к теме →</a>
+                    </div>
+                    
+                    <div class="kb-card">
+                        <h3>Docker</h3>
+                        <p>Контейнеризация приложений, Dockerfile, docker-compose</p>
+                        <a href="docker.html" class="card-link">Перейти к теме →</a>
+                    </div>
+                    
+                    <div class="kb-card">
+                        <h3>CI/CD</h3>
+                        <p>Непрерывная интеграция и доставка, GitLab CI, Jenkins, GitHub Actions</p>
+                        <a href="ci-cd.html" class="card-link">Перейти к теме →</a>
+                    </div>
+                    
+                    <div class="kb-card">
+                        <h3>Облачные технологии</h3>
+                        <p>AWS, Azure, GCP, Yandex Cloud - руководства и практики</p>
+                        <a href="cloud.html" class="card-link">Перейти к теме →</a>
+                    </div>
+                    
+                    <div class="kb-card">
+                        <h3>Инфраструктура как код</h3>
+                        <p>Terraform, Ansible, Puppet, Chef</p>
+                        <a href="iac.html" class="card-link">Перейти к теме →</a>
+                    </div>
+                    
+                    <div class="kb-card">
+                        <h3>Мониторинг и логирование</h3>
+                        <p>Prometheus, Grafana, ELK Stack, Loki</p>
+                        <a href="monitoring.html" class="card-link">Перейти к теме →</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer with terminal-style animation -->
+        <footer>
+            <div class="terminal">
+                <span class="prompt">$</span>
+                <div class="terminal-content">
+                    <span class="command">kubectl apply -f deployment.yaml</span>
+                    <span class="command">docker build -t app:latest .</span>
+                    <span class="command">ansible-playbook deploy.yml</span>
+                    <span class="command">terraform apply</span>
+                    <span class="command">git push origin main</span>
+                    <span class="command">kubectl rollout restart deployment/app</span>
+                </div>
+                <span class="cursor">|</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

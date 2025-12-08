@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker - Справочник - DevOps инженер Михаил Губин</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="container">
+        <!-- Header with navigation -->
+        <header>
+            <div class="nav">
+                <a href="../"><i class="icon">🏠</i> На главную</a>
+                <a href="./"><i class="icon">📚</i> Справочник</a>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <section class="kb-hero">
+                <h1>Docker</h1>
+                <p class="subtitle">Контейнеризация приложений, Dockerfile, docker-compose</p>
+            </section>
+
+            <section class="kb-content">
+                <h2>Содержание</h2>
+                <p>В этом разделе вы найдете материалы по Docker:</p>
+                <ul>
+                    <li>Основы работы с контейнерами</li>
+                    <li>Создание Dockerfile</li>
+                    <li>Работа с docker-compose</li>
+                    <li>Управление образами и контейнерами</li>
+                    <li>Создание многоступенчатых сборок</li>
+                    <li>Безопасность в Docker</li>
+                    <li>Best practices</li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Footer with terminal-style animation -->
+        <footer>
+            <div class="terminal">
+                <span class="prompt">$</span>
+                <div class="terminal-content">
+                    <span class="command">kubectl apply -f deployment.yaml</span>
+                    <span class="command">docker build -t app:latest .</span>
+                    <span class="command">ansible-playbook deploy.yml</span>
+                    <span class="command">terraform apply</span>
+                    <span class="command">git push origin main</span>
+                    <span class="command">kubectl rollout restart deployment/app</span>
+                </div>
+                <span class="cursor">|</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
