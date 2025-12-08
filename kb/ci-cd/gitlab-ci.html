@@ -28,50 +28,50 @@
             </section>
 
             <section class="kb-content">
-                <h2>Введение</h2>
-                <p>В этой статье рассматриваются основы и возможности GitLab CI/CD.</p>
-                
-                <h2>Что такое GitLab CI/CD</h2>
-                <p>GitLab CI/CD - это встроенная система непрерывной интеграции и доставки в GitLab, позволяющая автоматизировать процесс тестирования, сборки и развертывания приложений.</p>
-                
-                <h2>Основные компоненты</h2>
-                <ul>
-                    <li>Pipelines - пайплайны, которые объединяют задания</li>
-                    <li>Jobs - задания, которые выполняются в пайплайне</li>
-                    <li>Stages - этапы, определяющие порядок выполнения заданий</li>
-                    <li>Runners - агенты, которые выполняют задания</li>
-                </ul>
-                
-                <h2>Файл .gitlab-ci.yml</h2>
-                <p>Конфигурационный файл GitLab CI/CD, определяющий структуру пайплайна. Содержит stages, variables, before_script, script и другие директивы.</p>
-                
-                <h2>Примеры конфигураций</h2>
-                <p>Примеры .gitlab-ci.yml файлов для различных языков и фреймворков.</p>
-                
-                <h2>Преимущества GitLab CI/CD</h2>
-                <ul>
-                    <li>Интеграция с GitLab</li>
-                    <li>Встроенная визуализация пайплайнов</li>
-                    <li>Управление раннерами</li>
-                    <li>Возможность автотестов и безопасного развертывания</li>
-                </ul>
+                <div class="terminal-content">
+                    <div class="terminal-text">
+                        <div class="terminal-h1">GitLab CI/CD</div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Введение</div>
+                            <div class="terminal-p">В этой статье рассматриваются основы и возможности GitLab CI/CD.</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Что такое GitLab CI/CD</div>
+                            <div class="terminal-p">GitLab CI/CD - это встроенная система непрерывной интеграции и доставки в GitLab, позволяющая автоматизировать процесс тестирования, сборки и развертывания приложений.</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Основные компоненты</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Pipelines</span> - пайплайны, которые объединяют задания</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Jobs</span> - задания, которые выполняются в пайплайне</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Stages</span> - этапы, определяющие порядок выполнения заданий</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Runners</span> - агенты, которые выполняют задания</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Файл .gitlab-ci.yml</div>
+                            <div class="terminal-p">Конфигурационный файл GitLab CI/CD, определяющий структуру пайплайна. Содержит stages, variables, before_script, script и другие директивы.</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Примеры конфигураций</div>
+                            <div class="terminal-p">Примеры .gitlab-ci.yml файлов для различных языков и фреймворков.</div>
+                        </div>
+                        
+                        <div class="terminal-section">
+                            <div class="terminal-h2">Преимущества GitLab CI/CD</div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Интеграция с GitLab</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Встроенная визуализация пайплайнов</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Управление раннерами</span></div>
+                            <div class="terminal-p"><span class="terminal-prompt">•</span> <span class="terminal-command">Возможность автотестов и безопасного развертывания</span></div>
+                        </div>
+                    </div>
+                </div>
             </section>
                 </main>
 
-        <!-- Terminal component -->
-        <section class="kb-content">
-            <div class="terminal-component">
-                <span class="prompt">devops@mikhail:~$ </span>
-                <div class="terminal-commands">
-                    <div class="command">kubectl apply -f deployment.yaml</div>
-                    <div class="command">docker build -t app:latest .</div>
-                    <div class="command">ansible-playbook deploy.yml</div>
-                    <div class="command">terraform apply</div>
-                    <div class="command">git push origin main</div>
-                    <div class="command">kubectl rollout restart deployment/app</div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <script src="../../js/script.js"></script>
