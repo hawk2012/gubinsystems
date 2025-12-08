@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы работы с контейнерами - Справочник - DevOps инженер Михаил Губин</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="container">
+        <!-- Header with navigation -->
+        <header>
+            <div class="nav">
+                <a href="../../"><i class="icon">🏠</i> На главную</a>
+                <a href="../"><i class="icon">📚</i> Справочник</a>
+                <a href="./"><i class="icon">🐳</i> Docker</a>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <section class="kb-hero">
+                <h1>Основы работы с контейнерами</h1>
+                <p class="subtitle">Контейнеризация приложений, Dockerfile, docker-compose</p>
+            </section>
+
+            <section class="kb-content">
+                <h2>Введение</h2>
+                <p>В этой статье рассматриваются основы работы с контейнерами Docker.</p>
+                
+                <h2>Что такое контейнеры</h2>
+                <p>Контейнеры - это легковесная виртуализация на уровне операционной системы, позволяющая упаковать приложение и все его зависимости в изолированную среду.</p>
+                
+                <h2>Преимущества контейнеров</h2>
+                <ul>
+                    <li>Портативность между окружениями</li>
+                    <li>Быстрый запуск и остановка</li>
+                    <li>Экономия ресурсов</li>
+                    <li>Изоляция приложений</li>
+                </ul>
+                
+                <h2>Архитектура Docker</h2>
+                <p>Docker использует клиент-серверную архитектуру, где Docker daemon управляет образами, контейнерами, сетями и томами.</p>
+                
+                <h2>Основные команды</h2>
+                <ul>
+                    <li>docker run - запуск контейнера</li>
+                    <li>docker ps - список запущенных контейнеров</li>
+                    <li>docker images - список образов</li>
+                    <li>docker build - сборка образа</li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Footer with terminal-style animation -->
+        <footer>
+            <div class="terminal">
+                <span class="prompt">$</span>
+                <div class="terminal-content">
+                    <span class="command">kubectl apply -f deployment.yaml</span>
+                    <span class="command">docker build -t app:latest .</span>
+                    <span class="command">ansible-playbook deploy.yml</span>
+                    <span class="command">terraform apply</span>
+                    <span class="command">git push origin main</span>
+                    <span class="command">kubectl rollout restart deployment/app</span>
+                </div>
+                <span class="cursor">|</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

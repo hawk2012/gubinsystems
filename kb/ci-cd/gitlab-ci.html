@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitLab CI/CD - Справочник - DevOps инженер Михаил Губин</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="container">
+        <!-- Header with navigation -->
+        <header>
+            <div class="nav">
+                <a href="../../"><i class="icon">🏠</i> На главную</a>
+                <a href="../"><i class="icon">📚</i> Справочник</a>
+                <a href="./"><i class="icon">🔄</i> CI/CD</a>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <section class="kb-hero">
+                <h1>GitLab CI/CD</h1>
+                <p class="subtitle">Непрерывная интеграция и доставка, GitLab CI, Jenkins, GitHub Actions</p>
+            </section>
+
+            <section class="kb-content">
+                <h2>Введение</h2>
+                <p>В этой статье рассматриваются основы и возможности GitLab CI/CD.</p>
+                
+                <h2>Что такое GitLab CI/CD</h2>
+                <p>GitLab CI/CD - это встроенная система непрерывной интеграции и доставки в GitLab, позволяющая автоматизировать процесс тестирования, сборки и развертывания приложений.</p>
+                
+                <h2>Основные компоненты</h2>
+                <ul>
+                    <li>Pipelines - пайплайны, которые объединяют задания</li>
+                    <li>Jobs - задания, которые выполняются в пайплайне</li>
+                    <li>Stages - этапы, определяющие порядок выполнения заданий</li>
+                    <li>Runners - агенты, которые выполняют задания</li>
+                </ul>
+                
+                <h2>Файл .gitlab-ci.yml</h2>
+                <p>Конфигурационный файл GitLab CI/CD, определяющий структуру пайплайна. Содержит stages, variables, before_script, script и другие директивы.</p>
+                
+                <h2>Примеры конфигураций</h2>
+                <p>Примеры .gitlab-ci.yml файлов для различных языков и фреймворков.</p>
+                
+                <h2>Преимущества GitLab CI/CD</h2>
+                <ul>
+                    <li>Интеграция с GitLab</li>
+                    <li>Встроенная визуализация пайплайнов</li>
+                    <li>Управление раннерами</li>
+                    <li>Возможность автотестов и безопасного развертывания</li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Footer with terminal-style animation -->
+        <footer>
+            <div class="terminal">
+                <span class="prompt">$</span>
+                <div class="terminal-content">
+                    <span class="command">kubectl apply -f deployment.yaml</span>
+                    <span class="command">docker build -t app:latest .</span>
+                    <span class="command">ansible-playbook deploy.yml</span>
+                    <span class="command">terraform apply</span>
+                    <span class="command">git push origin main</span>
+                    <span class="command">kubectl rollout restart deployment/app</span>
+                </div>
+                <span class="cursor">|</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание Dockerfile - Справочник - DevOps инженер Михаил Губин</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="container">
+        <!-- Header with navigation -->
+        <header>
+            <div class="nav">
+                <a href="../../"><i class="icon">🏠</i> На главную</a>
+                <a href="../"><i class="icon">📚</i> Справочник</a>
+                <a href="./"><i class="icon">🐳</i> Docker</a>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <section class="kb-hero">
+                <h1>Создание Dockerfile</h1>
+                <p class="subtitle">Контейнеризация приложений, Dockerfile, docker-compose</p>
+            </section>
+
+            <section class="kb-content">
+                <h2>Введение</h2>
+                <p>В этой статье рассматриваются основы создания Dockerfile для сборки Docker-образов.</p>
+                
+                <h2>Что такое Dockerfile</h2>
+                <p>Dockerfile - это текстовый файл, содержащий инструкции для создания Docker-образа. Каждая инструкция создает слой в образе.</p>
+                
+                <h2>Основные инструкции</h2>
+                <ul>
+                    <li>FROM - указывает базовый образ</li>
+                    <li>RUN - выполняет команды во время сборки</li>
+                    <li>COPY - копирует файлы из хоста в образ</li>
+                    <li>ADD - копирует или распаковывает файлы в образ</li>
+                    <li>EXPOSE - документирует порт, который будет прослушиваться</li>
+                    <li>CMD - указывает команду по умолчанию при запуске контейнера</li>
+                    <li>ENTRYPOINT - позволяет настроить контейнер для запуска исполняемого файла</li>
+                    <li>WORKDIR - устанавливает рабочую директорию</li>
+                    <li>ENV - устанавливает переменные окружения</li>
+                </ul>
+                
+                <h2>Примеры Dockerfile</h2>
+                <p>Примеры Dockerfile для различных языков программирования и приложений.</p>
+                
+                <h2>Лучшие практики</h2>
+                <p>Использование .dockerignore, многоступенчатые сборки, безопасность при создании Dockerfile.</p>
+            </section>
+        </main>
+
+        <!-- Footer with terminal-style animation -->
+        <footer>
+            <div class="terminal">
+                <span class="prompt">$</span>
+                <div class="terminal-content">
+                    <span class="command">kubectl apply -f deployment.yaml</span>
+                    <span class="command">docker build -t app:latest .</span>
+                    <span class="command">ansible-playbook deploy.yml</span>
+                    <span class="command">terraform apply</span>
+                    <span class="command">git push origin main</span>
+                    <span class="command">kubectl rollout restart deployment/app</span>
+                </div>
+                <span class="cursor">|</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>
