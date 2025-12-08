@@ -62,23 +62,22 @@
                 <h2>Преимущества и недостатки Jenkins</h2>
                 <p>Обзор сильных и слабых сторон Jenkins по сравнению с другими CI/CD инструментами.</p>
             </section>
-        </main>
+                </main>
 
-        <!-- Footer with terminal-style animation -->
-        <footer>
-            <div class="terminal">
-                <span class="prompt">$</span>
-                <div class="terminal-content">
-                    <span class="command">kubectl apply -f deployment.yaml</span>
-                    <span class="command">docker build -t app:latest .</span>
-                    <span class="command">ansible-playbook deploy.yml</span>
-                    <span class="command">terraform apply</span>
-                    <span class="command">git push origin main</span>
-                    <span class="command">kubectl rollout restart deployment/app</span>
+        <!-- Terminal component -->
+        <section class="kb-content">
+            <div class="terminal-component">
+                <span class="prompt">devops@mikhail:~$ </span>
+                <div class="terminal-commands">
+                    <div class="command">kubectl apply -f deployment.yaml</div>
+                    <div class="command">docker build -t app:latest .</div>
+                    <div class="command">ansible-playbook deploy.yml</div>
+                    <div class="command">terraform apply</div>
+                    <div class="command">git push origin main</div>
+                    <div class="command">kubectl rollout restart deployment/app</div>
                 </div>
-                <span class="cursor">|</span>
             </div>
-        </footer>
+        </section>
     </div>
 
     <script src="../../js/script.js"></script>

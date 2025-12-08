@@ -1,1 +1,101 @@
-(css/style.css, kb/docker/container-basics.html, kb/index.html, kb/kubernetes/cluster-basics.html are all source/config files like .css, .html - no build artifacts, dependencies, or temp files in the changes)
+```
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+dist/
+build/
+target/
+
+# Dependencies
+.venv/
+venv/
+node_modules/
+.julia/
+.zig/
+.gradle/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Python specific
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg-info/
+.eggs/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pytest
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build tools
+*.class
+*.jar
+*.war
+*.ear
+obj/
+*.dll
+*.so
+*.a
+*.lib
+*.out
+
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+```
