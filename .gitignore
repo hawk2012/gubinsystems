@@ -28,27 +28,20 @@ venv/
 # Editors
 .vscode/
 .idea/
-*.swp
-*.swo
 
 # System files
 .DS_Store
 Thumbs.db
 
-# Coverage and testing
+# Coverage
 coverage/
 htmlcov/
 .coverage
-.pytest_cache/
-.mypy_cache/
 
-# Build directories
+# Distribution / packaging
 dist/
 build/
-target/
-.gradle/
-
-# Compressed files
+*.tar.gz
 *.zip
 *.gz
 *.tar
@@ -67,8 +60,4 @@ target/
 *.Z
 *.lz
 *.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
 ```
