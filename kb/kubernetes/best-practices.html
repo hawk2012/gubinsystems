@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best practices в Kubernetes - Справочник - DevOps инженер Михаил Губин</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="container">
+        <!-- Header with navigation -->
+        <header>
+            <div class="nav">
+                <a href="../../"><i class="icon">🏠</i> На главную</a>
+                <a href="../"><i class="icon">📚</i> Справочник</a>
+                <a href="./"><i class="icon">📖</i> Kubernetes</a>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <section class="kb-hero">
+                <h1>Best practices в Kubernetes</h1>
+                <p class="subtitle">Руководства и лучшие практики по работе с контейнерами и оркестрацией</p>
+            </section>
+
+            <section class="kb-content">
+                <h2>Введение</h2>
+                <p>В этой статье рассматриваются лучшие практики при работе с Kubernetes.</p>
+                
+                <h2>Ресурсы и ограничения</h2>
+                <ul>
+                    <li>Определение resource requests и limits</li>
+                    <li>Использование Quality of Service (QoS) классов</li>
+                    <li>Horizontal Pod Autoscaler (HPA)</li>
+                </ul>
+                
+                <h2>Безопасность</h2>
+                <ul>
+                    <li>Non-root пользователи в контейнерах</li>
+                    <li>SecurityContext настройки</li>
+                    <li>ImagePullPolicy: Always</li>
+                </ul>
+                
+                <h2>Надежность и отказоустойчивость</h2>
+                <ul>
+                    <li>Readiness и liveness probes</li>
+                    <li>Pod Disruption Budgets</li>
+                    <li>Labels и selectors для управления развертыванием</li>
+                </ul>
+                
+                <h2>Мониторинг и логирование</h2>
+                <p>Важность постоянного мониторинга состояния кластера и приложений.</p>
+            </section>
+        </main>
+
+        <!-- Footer with terminal-style animation -->
+        <footer>
+            <div class="terminal">
+                <span class="prompt">$</span>
+                <div class="terminal-content">
+                    <span class="command">kubectl apply -f deployment.yaml</span>
+                    <span class="command">docker build -t app:latest .</span>
+                    <span class="command">ansible-playbook deploy.yml</span>
+                    <span class="command">terraform apply</span>
+                    <span class="command">git push origin main</span>
+                    <span class="command">kubectl rollout restart deployment/app</span>
+                </div>
+                <span class="cursor">|</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>
