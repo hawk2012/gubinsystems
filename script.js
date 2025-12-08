@@ -1,47 +1,24 @@
-// Mobile Navigation Toggle
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+// Terminal animation - cycle through terminal text
+function initTerminalAnimation() {
+    const terminalContent = document.querySelector('.terminal-content');
+    if (!terminalContent) return;
     
-    // Animate hamburger
-    hamburger.classList.toggle('active');
-});
+    // Clone the content to create a seamless scrolling effect
+    const originalContent = terminalContent.innerHTML;
+    terminalContent.innerHTML = originalContent + originalContent;
+}
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
-});
+// Initialize terminal animation when page loads
+document.addEventListener('DOMContentLoaded', initTerminalAnimation);
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Add scroll effect to navbar
+// Add scroll effect to header
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('header');
+    const header = document.querySelector('header');
     
     if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
+        header.classList.add('scrolled');
     } else {
-        navbar.classList.remove('scrolled');
+        header.classList.remove('scrolled');
     }
 });
 
@@ -60,11 +37,39 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements to animate on scroll
-document.querySelectorAll('.service-card, .tech-item, .hero-content').forEach(el => {
+document.querySelectorAll('.exp-item, .skill-item, .edu-item, .glass-block').forEach(el => {
     observer.observe(el);
 });
 
 // Add animation class to elements when they come into view
-document.querySelectorAll('.service-card, .tech-item, .hero-content').forEach((el, index) => {
+document.querySelectorAll('.exp-item, .skill-item, .edu-item, .glass-block').forEach((el, index) => {
     el.style.transitionDelay = `${index * 0.1}s`;
+});
+
+// Add hover effects for glossy items
+document.querySelectorAll('.skill-item, .exp-item, .edu-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        this.style.transform = this.style.transform.replace('translateY(-3px)', '') + ' translateY(-3px)';
+    });
+    
+    item.addEventListener('mouseleave', function() {
+        this.style.transform = this.style.transform.replace('translateY(-3px)', '');
+    });
+});
+
+// Smooth scrolling for anchor links (in case we add them later)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
