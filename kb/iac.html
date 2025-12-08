@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфраструктура как код - Справочник - DevOps инженер Михаил Губин</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="container">
+        <!-- Header with navigation -->
+        <header>
+            <div class="nav">
+                <a href="../"><i class="icon">🏠</i> На главную</a>
+                <a href="./"><i class="icon">📚</i> Справочник</a>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <section class="kb-hero">
+                <h1>Инфраструктура как код</h1>
+                <p class="subtitle">Terraform, Ansible, Puppet, Chef</p>
+            </section>
+
+            <section class="kb-content">
+                <h2>Содержание</h2>
+                <p>В этом разделе вы найдете материалы по инфраструктуре как коду:</p>
+                <ul>
+                    <li>Terraform основы и продвинутые практики</li>
+                    <li>Ansible плейбуки и роли</li>
+                    <li>Puppet и Chef</li>
+                    <li>Управление состоянием инфраструктуры</li>
+                    <li>Модули и шаблоны</li>
+                    <li>Безопасность в IaC</li>
+                    <li>Best practices</li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Footer with terminal-style animation -->
+        <footer>
+            <div class="terminal">
+                <span class="prompt">$</span>
+                <div class="terminal-content">
+                    <span class="command">kubectl apply -f deployment.yaml</span>
+                    <span class="command">docker build -t app:latest .</span>
+                    <span class="command">ansible-playbook deploy.yml</span>
+                    <span class="command">terraform apply</span>
+                    <span class="command">git push origin main</span>
+                    <span class="command">kubectl rollout restart deployment/app</span>
+                </div>
+                <span class="cursor">|</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
