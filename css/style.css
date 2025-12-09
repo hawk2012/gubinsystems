@@ -452,6 +452,59 @@ footer {
     text-align: center;
 }
 
+/* Copyright footer */
+footer.experience {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(0, 102, 255, 0.3);
+    box-shadow: 
+        0 0 15px rgba(0, 102, 255, 0.2),
+        inset 0 0 20px rgba(0, 102, 255, 0.1);
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 50px 0;
+    padding: 30px;
+}
+
+footer.experience::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(0, 102, 255, 0.1) 50%,
+        transparent 100%
+    );
+    transform: rotate(30deg);
+    z-index: -1;
+    animation: shine 8s infinite linear;
+}
+
+footer.experience h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+footer.experience h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #0066ff, #00ff9d);
+    border-radius: 3px;
+}
+
 .terminal {
     font-family: 'Fira Code', monospace;
     font-size: 14px;
