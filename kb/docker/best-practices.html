@@ -1,76 +1,119 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best practices в Docker - Справочник - DevOps инженер Михаил Губин</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="background"></div>
-    
-    <div class="container">
-        <!-- Header with navigation -->
-        <header>
-            <div class="nav">
-                <a href="../../"><i class="icon">🏠</i> На главную</a>
-                <a href="../"><i class="icon">📚</i> Справочник</a>
-                <a href="./"><i class="icon">🐳</i> Docker</a>
-            </div>
-        </header>
-
-        <!-- Main content -->
-        <main>
-            <section class="kb-hero">
-                <div class="terminal-content">
-                    <div class="terminal-text">
-                        <div class="terminal-p">
-                            <span class="terminal-prompt">devops@mikhail:~$ </span>
-                            <span class="terminal-command">man best_practices</span>
-                        </div>
-                    </div>
-                </div></div>
-                </div></div>
-                </div>
-                <h1>Best practices в Docker</h1>
-                <p class="subtitle">Контейнеризация приложений, Dockerfile, docker-compose</p>
-            </section>
-
-            <section class="kb-content">
-                <h2>Введение</h2>
-                <p>В этой статье рассматриваются лучшие практики при работе с Docker.</p>
-                
-                <h2>Создание образов</h2>
-                <ul>
-                    <li>Использование .dockerignore для исключения ненужных файлов</li>
-                    <li>Многоступенчатые сборки для уменьшения размера образа</li>
-                    <li>Использование конкретных тегов вместо latest</li>
-                    <li>Запуск контейнеров от непривилегированного пользователя</li>
-                </ul>
-                
-                <h2>Безопасность</h2>
-                <ul>
-                    <li>Сканирование образов на уязвимости</li>
-                    <li>Использование безопасных базовых образов</li>
-                    <li>Ограничение возможностей контейнера</li>
-                    <li>Минимизация прав доступа</li>
-                </ul>
-                
-                <h2>Производительность</h2>
-                <ul>
-                    <li>Использование кэширования слоев</li>
-                    <li>Размещение часто изменяющихся инструкций ниже в Dockerfile</li>
-                    <li>Очистка временных файлов в той же инструкции RUN</li>
-                </ul>
-                
-                <h2>Управление ресурсами</h2>
-                <p>Ограничение использования ресурсов контейнерами с помощью флагов --memory и --cpus.</p>
-            </section>
-                </main>
-
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Best practices в Docker - Справочник - DevOps инженер Михаил Губин
+  </title>
+  <link href="../../css/style.css" rel="stylesheet"/>
+  <link href="css/newyear.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Open+Sans&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body class="newyear-body">
+  <div class="background">
+  </div>
+  <div class="container">
+   <!-- Header with navigation -->
+   <header>
+    <div class="nav">
+     <a href="../../">
+      <i class="icon">
+       🏠
+      </i>
+      На главную
+     </a>
+     <a href="../">
+      <i class="icon">
+       📚
+      </i>
+      Справочник
+     </a>
+     <a href="./">
+      <i class="icon">
+       🐳
+      </i>
+      Docker
+     </a>
     </div>
-
-    <script src="../../js/script.js"></script>
-</body>
+   </header>
+   <!-- Main content -->
+   <main>
+    <section class="kb-hero">
+    </section>
+   </main>
+  </div>
+  <h1>
+   Best practices в Docker
+  </h1>
+  <p class="subtitle">
+   Контейнеризация приложений, Dockerfile, docker-compose
+  </p>
+  <section class="kb-content">
+   <h2>
+    Введение
+   </h2>
+   <p>
+    В этой статье рассматриваются лучшие практики при работе с Docker.
+   </p>
+   <h2>
+    Создание образов
+   </h2>
+   <ul>
+    <li>
+     Использование .dockerignore для исключения ненужных файлов
+    </li>
+    <li>
+     Многоступенчатые сборки для уменьшения размера образа
+    </li>
+    <li>
+     Использование конкретных тегов вместо latest
+    </li>
+    <li>
+     Запуск контейнеров от непривилегированного пользователя
+    </li>
+   </ul>
+   <h2>
+    Безопасность
+   </h2>
+   <ul>
+    <li>
+     Сканирование образов на уязвимости
+    </li>
+    <li>
+     Использование безопасных базовых образов
+    </li>
+    <li>
+     Ограничение возможностей контейнера
+    </li>
+    <li>
+     Минимизация прав доступа
+    </li>
+   </ul>
+   <h2>
+    Производительность
+   </h2>
+   <ul>
+    <li>
+     Использование кэширования слоев
+    </li>
+    <li>
+     Размещение часто изменяющихся инструкций ниже в Dockerfile
+    </li>
+    <li>
+     Очистка временных файлов в той же инструкции RUN
+    </li>
+   </ul>
+   <h2>
+    Управление ресурсами
+   </h2>
+   <p>
+    Ограничение использования ресурсов контейнерами с помощью флагов --memory и --cpus.
+   </p>
+  </section>
+  <script src="../../js/script.js">
+  </script>
+  <script src="js/newyear.js">
+  </script>
+ </body>
 </html>
