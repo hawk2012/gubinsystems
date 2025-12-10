@@ -136,3 +136,37 @@ body.newyear-body::before {
         inset 0 0 30px rgba(0, 100, 0, 0.6) !important;
     background: linear-gradient(145deg, #2a4a2a, #1a3a1a) !important;
 }
+
+/* Knowledge Base Section Blocks with festive styling */
+.kb-section-block {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 215, 0, 0.2) !important;
+    box-shadow: 
+        0 4px 8px rgba(139, 0, 0, 0.2),
+        inset 0 0 15px rgba(255, 215, 0, 0.1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.kb-section-block::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255, 215, 0, 0.1) 50%,
+        transparent 100%
+    );
+    transform: rotate(30deg);
+    z-index: -1;
+    animation: shine 8s infinite linear;
+}
+
+@keyframes shine {
+    0% { transform: rotate(30deg) translateX(-100%); }
+    100% { transform: rotate(30deg) translateX(100%); }
+}
