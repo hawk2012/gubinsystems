@@ -115,12 +115,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Add New Year's banner
+    // Add New Year's banner with countdown
     function addNewYearBanner() {
         const banner = document.createElement('div');
         banner.className = 'newyear-banner';
-        banner.innerHTML = '🎉 С Новым 2026 Годом! 🎉 Пусть этот год принесет вам успехи в DevOps и новые достижения! 🎊';
+        banner.id = 'newyear-banner';
+        
+        // Calculate time until next New Year
+        const now = new Date();
+        const nextYear = now.getFullYear() + 1;
+        const newYearDate = new Date(`January 1, ${nextYear} 00:00:00`);
+        
+        // Check if we're already past New Year, then use next year
+        if (now > newYearDate) {
+            newYearDate.setFullYear(nextYear + 1);
+        }
+        
+        // Create initial banner with countdown
+        banner.innerHTML = '<span id="countdown-text">До Нового ' + newYearDate.getFullYear() + ' года: <span id="countdown-timer"></span></span>';
         document.body.insertBefore(banner, document.body.firstChild);
+        
+        // Start countdown
+        updateCountdown(newYearDate);
+    }
+    
+    // Update countdown timer
+    function updateCountdown(newYearDate) {
+        const countdownElement = document.getElementById('countdown-timer');
+        const textElement = document.getElementById('countdown-text');
+        
+        function updateTimer() {
+            const now = new Date();
+            const diff = newYearDate - now;
+            
+            if (diff <= 0) {
+                // New Year has arrived
+                textElement.textContent = `🎉 С Новым ${newYearDate.getFullYear()} Годом! 🎉 Пусть этот год принесет вам успехи в DevOps и новые достижения! 🎊`;
+                clearInterval(countdownInterval);
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            countdownElement.innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+        }
+        
+        // Update immediately
+        updateTimer();
+        
+        // Update every second
+        const countdownInterval = setInterval(updateTimer, 1000);
     }
     
     // Initialize all New Year's effects
