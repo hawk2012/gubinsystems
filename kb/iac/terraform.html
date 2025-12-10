@@ -1,80 +1,131 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terraform основы и продвинутые практики - Справочник - DevOps инженер Михаил Губин</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="background"></div>
-    
-    <div class="container">
-        <!-- Header with navigation -->
-        <header>
-            <div class="nav">
-                <a href="../../"><i class="icon">🏠</i> На главную</a>
-                <a href="../"><i class="icon">📚</i> Справочник</a>
-                <a href="./"><i class="icon">🏗️</i> Инфраструктура как код</a>
-            </div>
-        </header>
-
-        <!-- Main content -->
-        <main>
-            <section class="kb-hero">
-                <div class="terminal-content">
-                    <div class="terminal-text">
-                        <div class="terminal-p">
-                            <span class="terminal-prompt">devops@mikhail:~$ </span>
-                            <span class="terminal-command">man terraform</span>
-                        </div>
-                    </div>
-                </div></div>
-                </div></div>
-                </div>
-                <h1>Terraform основы и продвинутые практики</h1>
-                <p class="subtitle">Terraform, Ansible, Puppet, Chef</p>
-            </section>
-
-            <section class="kb-content">
-                <h2>Введение</h2>
-                <p>В этой статье рассматриваются основы Terraform и продвинутые практики работы с ним.</p>
-                
-                <h2>Что такое Terraform</h2>
-                <p>Terraform - это инструмент от HashiCorp для создания и управления инфраструктурой как кода (Infrastructure as Code). Позволяет определять инфраструктуру в декларативном формате.</p>
-                
-                <h2>Основные концепции Terraform</h2>
-                <ul>
-                    <li>Configuration files - файлы с описанием инфраструктуры</li>
-                    <li>State - состояние инфраструктуры</li>
-                    <li>Providers - плагины для взаимодействия с облачными провайдерами</li>
-                    <li>Resources - ресурсы инфраструктуры</li>
-                    <li>Modules - переиспользуемые компоненты</li>
-                </ul>
-                
-                <h2>Основные команды</h2>
-                <ul>
-                    <li>terraform init - инициализация рабочего каталога</li>
-                    <li>terraform plan - планирование изменений</li>
-                    <li>terraform apply - применение изменений</li>
-                    <li>terraform destroy - удаление инфраструктуры</li>
-                    <li>terraform validate - проверка конфигурации</li>
-                </ul>
-                
-                <h2>Продвинутые практики</h2>
-                <ul>
-                    <li>Использование remote state для совместной работы</li>
-                    <li>Работа с модулями для повторного использования кода</li>
-                    <li>Управление версиями провайдеров и модулей</li>
-                    <li>Использование workspaces для разных окружений</li>
-                    <li>Проверка безопасности с помощью tfsec и других инструментов</li>
-                </ul>
-            </section>
-                </main>
-
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Terraform основы и продвинутые практики - Справочник - DevOps инженер Михаил Губин
+  </title>
+  <link href="../../css/style.css" rel="stylesheet"/>
+  <link href="css/newyear.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Open+Sans&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body class="newyear-body">
+  <div class="background">
+  </div>
+  <div class="container">
+   <!-- Header with navigation -->
+   <header>
+    <div class="nav">
+     <a href="../../">
+      <i class="icon">
+       🏠
+      </i>
+      На главную
+     </a>
+     <a href="../">
+      <i class="icon">
+       📚
+      </i>
+      Справочник
+     </a>
+     <a href="./">
+      <i class="icon">
+       🏗️
+      </i>
+      Инфраструктура как код
+     </a>
     </div>
-
-    <script src="../../js/script.js"></script>
-</body>
+   </header>
+   <!-- Main content -->
+   <main>
+    <section class="kb-hero">
+    </section>
+   </main>
+  </div>
+  <h1>
+   Terraform основы и продвинутые практики
+  </h1>
+  <p class="subtitle">
+   Terraform, Ansible, Puppet, Chef
+  </p>
+  <section class="kb-content">
+   <h2>
+    Введение
+   </h2>
+   <p>
+    В этой статье рассматриваются основы Terraform и продвинутые практики работы с ним.
+   </p>
+   <h2>
+    Что такое Terraform
+   </h2>
+   <p>
+    Terraform - это инструмент от HashiCorp для создания и управления инфраструктурой как кода (Infrastructure as Code). Позволяет определять инфраструктуру в декларативном формате.
+   </p>
+   <h2>
+    Основные концепции Terraform
+   </h2>
+   <ul>
+    <li>
+     Configuration files - файлы с описанием инфраструктуры
+    </li>
+    <li>
+     State - состояние инфраструктуры
+    </li>
+    <li>
+     Providers - плагины для взаимодействия с облачными провайдерами
+    </li>
+    <li>
+     Resources - ресурсы инфраструктуры
+    </li>
+    <li>
+     Modules - переиспользуемые компоненты
+    </li>
+   </ul>
+   <h2>
+    Основные команды
+   </h2>
+   <ul>
+    <li>
+     terraform init - инициализация рабочего каталога
+    </li>
+    <li>
+     terraform plan - планирование изменений
+    </li>
+    <li>
+     terraform apply - применение изменений
+    </li>
+    <li>
+     terraform destroy - удаление инфраструктуры
+    </li>
+    <li>
+     terraform validate - проверка конфигурации
+    </li>
+   </ul>
+   <h2>
+    Продвинутые практики
+   </h2>
+   <ul>
+    <li>
+     Использование remote state для совместной работы
+    </li>
+    <li>
+     Работа с модулями для повторного использования кода
+    </li>
+    <li>
+     Управление версиями провайдеров и модулей
+    </li>
+    <li>
+     Использование workspaces для разных окружений
+    </li>
+    <li>
+     Проверка безопасности с помощью tfsec и других инструментов
+    </li>
+   </ul>
+  </section>
+  <script src="../../js/script.js">
+  </script>
+  <script src="js/newyear.js">
+  </script>
+ </body>
 </html>

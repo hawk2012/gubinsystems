@@ -1,73 +1,114 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Безопасность в Kubernetes - Справочник - DevOps инженер Михаил Губин</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="background"></div>
-    
-    <div class="container">
-        <!-- Header with navigation -->
-        <header>
-            <div class="nav">
-                <a href="../../"><i class="icon">🏠</i> На главную</a>
-                <a href="../"><i class="icon">📚</i> Справочник</a>
-                <a href="./"><i class="icon">📖</i> Kubernetes</a>
-            </div>
-        </header>
-
-        <!-- Main content -->
-        <main>
-            <section class="kb-hero">
-                <div class="terminal-content">
-                    <div class="terminal-text">
-                        <div class="terminal-p">
-                            <span class="terminal-prompt">devops@mikhail:~$ </span>
-                            <span class="terminal-command">man security</span>
-                        </div>
-                    </div>
-                </div></div>
-                </div></div>
-                </div>
-                <h1>Безопасность в Kubernetes</h1>
-                <p class="subtitle">Руководства и лучшие практики по работе с контейнерами и оркестрацией</p>
-            </section>
-
-            <section class="kb-content">
-                <h2>Введение</h2>
-                <p>В этой статье рассматриваются основные аспекты безопасности в Kubernetes-кластерах.</p>
-                
-                <h2>Контроль доступа</h2>
-                <p>В Kubernetes используется Role-Based Access Control (RBAC) для управления доступом к ресурсам.</p>
-                
-                <h2>Основные компоненты безопасности</h2>
-                <ul>
-                    <li>Authentication (аутентификация)</li>
-                    <li>Authorization (авторизация)</li>
-                    <li>Admission Control (контроль доступа)</li>
-                    <li>Network Policies (сетевые политики)</li>
-                    <li>Pod Security Policies (политики безопасности подов)</li>
-                </ul>
-                
-                <h2>Секреты и управление чувствительными данными</h2>
-                <p>Использование Secrets для хранения конфиденциальной информации и инструменты для управления ими.</p>
-                
-                <h2>Безопасные практики</h2>
-                <ul>
-                    <li>Минимизация привилегий (least privilege)</li>
-                    <li>Использование безопасных образов</li>
-                    <li>Сканирование образов на уязвимости</li>
-                    <li>Шифрование etcd</li>
-                </ul>
-            </section>
-                </main>
-
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Безопасность в Kubernetes - Справочник - DevOps инженер Михаил Губин
+  </title>
+  <link href="../../css/style.css" rel="stylesheet"/>
+  <link href="css/newyear.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Open+Sans&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body class="newyear-body">
+  <div class="background">
+  </div>
+  <div class="container">
+   <!-- Header with navigation -->
+   <header>
+    <div class="nav">
+     <a href="../../">
+      <i class="icon">
+       🏠
+      </i>
+      На главную
+     </a>
+     <a href="../">
+      <i class="icon">
+       📚
+      </i>
+      Справочник
+     </a>
+     <a href="./">
+      <i class="icon">
+       📖
+      </i>
+      Kubernetes
+     </a>
     </div>
-
-    <script src="../../js/script.js"></script>
-</body>
+   </header>
+   <!-- Main content -->
+   <main>
+    <section class="kb-hero">
+    </section>
+   </main>
+  </div>
+  <h1>
+   Безопасность в Kubernetes
+  </h1>
+  <p class="subtitle">
+   Руководства и лучшие практики по работе с контейнерами и оркестрацией
+  </p>
+  <section class="kb-content">
+   <h2>
+    Введение
+   </h2>
+   <p>
+    В этой статье рассматриваются основные аспекты безопасности в Kubernetes-кластерах.
+   </p>
+   <h2>
+    Контроль доступа
+   </h2>
+   <p>
+    В Kubernetes используется Role-Based Access Control (RBAC) для управления доступом к ресурсам.
+   </p>
+   <h2>
+    Основные компоненты безопасности
+   </h2>
+   <ul>
+    <li>
+     Authentication (аутентификация)
+    </li>
+    <li>
+     Authorization (авторизация)
+    </li>
+    <li>
+     Admission Control (контроль доступа)
+    </li>
+    <li>
+     Network Policies (сетевые политики)
+    </li>
+    <li>
+     Pod Security Policies (политики безопасности подов)
+    </li>
+   </ul>
+   <h2>
+    Секреты и управление чувствительными данными
+   </h2>
+   <p>
+    Использование Secrets для хранения конфиденциальной информации и инструменты для управления ими.
+   </p>
+   <h2>
+    Безопасные практики
+   </h2>
+   <ul>
+    <li>
+     Минимизация привилегий (least privilege)
+    </li>
+    <li>
+     Использование безопасных образов
+    </li>
+    <li>
+     Сканирование образов на уязвимости
+    </li>
+    <li>
+     Шифрование etcd
+    </li>
+   </ul>
+  </section>
+  <script src="../../js/script.js">
+  </script>
+  <script src="js/newyear.js">
+  </script>
+ </body>
 </html>
