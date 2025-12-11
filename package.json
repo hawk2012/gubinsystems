@@ -1,0 +1,33 @@
+{
+  "name": "gubinnet",
+  "version": "0.1.0",
+  "description": "A modular CMS for developers who value control and performance",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cms",
+    "modular",
+    "nodejs",
+    "fastify",
+    "prisma",
+    "admin-panel"
+  ],
+  "author": "GubinNET Team",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^4.24.3",
+    "@fastify/cors": "^8.4.0",
+    "@fastify/compress": "^6.5.0",
+    "@fastify/static": "^6.12.0",
+    "prisma": "^5.6.0",
+    "@prisma/client": "^5.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "fastify-plugin": "^4.5.1"
+  }
+}
