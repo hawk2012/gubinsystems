@@ -1,0 +1,20 @@
+{
+  "name": "create-gubinet-app",
+  "version": "0.1.0",
+  "description": "Official CLI tool to create new GubinNET projects",
+  "bin": {
+    "create-gubinet-app": "./create-gubinet-app.js"
+  },
+  "keywords": [
+    "gubinnet",
+    "cms",
+    "cli",
+    "scaffolding",
+    "modular"
+  ],
+  "author": "GubinNET Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
