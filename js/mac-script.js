@@ -36,20 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const app = this.getAttribute('data-app');
             
             // Handle social media links in dock
-            if (app === 'social' || app === 'linkedin' || app === 'github' || app === 'twitter') {
+            if (app === 'social' || app === 'github') {
                 let socialUrl = '';
                 switch(app) {
                     case 'social':
                         socialUrl = 'https://vk.ru/mgubin';
                         break;
-                    case 'linkedin':
-                        socialUrl = 'https://linkedin.com/in/mikhailgubin';
-                        break;
                     case 'github':
                         socialUrl = 'https://github.com/hawk2012';
-                        break;
-                    case 'twitter':
-                        socialUrl = 'https://twitter.com/';
                         break;
                 }
                 
@@ -102,13 +96,32 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Check if it's a PDF file
         if (appName === 'skills' || appName === 'career' || appName === 'description') {
-            // Open PDF files in new tabs
-            let pdfFile = '';
-            if (appName === 'skills') pdfFile = 'umienia.pdf.html';
-            if (appName === 'career') pdfFile = 'kariera.pdf.html';
-            if (appName === 'description') pdfFile = 'opisanie.pdf.html';
+            // Create or show PDF viewer window
+            let pdfWindowId = '';
+            if (appName === 'skills') pdfWindowId = 'skills-window';
+            if (appName === 'career') pdfWindowId = 'career-window';
+            if (appName === 'description') pdfWindowId = 'description-window';
             
-            window.open(pdfFile, '_blank');
+            const pdfWindow = document.getElementById(pdfWindowId);
+            if (pdfWindow) {
+                pdfWindow.style.display = 'block';
+                
+                // Bring window to front
+                pdfWindow.style.zIndex = '1000';
+                
+                // Add click event to bring window to front when clicked
+                pdfWindow.addEventListener('mousedown', function() {
+                    // Find highest z-index
+                    let highestZ = 0;
+                    document.querySelectorAll('.window').forEach(w => {
+                        const z = parseInt(w.style.zIndex) || 0;
+                        if (z > highestZ) highestZ = z;
+                    });
+                    
+                    // Set this window to one higher than highest
+                    this.style.zIndex = highestZ + 1;
+                });
+            }
             return;
         }
         
