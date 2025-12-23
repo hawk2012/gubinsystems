@@ -3,158 +3,420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Михаил Губин - DevOps/SRE-инженер с 10+ годами опыта. Специализируюсь на стабильности, автоматизации и отказоустойчивости высоконагруженных систем. Kubernetes, Docker, CI/CD, AWS, Terraform, Ansible.">
-    <meta name="keywords" content="DevOps, SRE, инженер, Михаил Губин, Kubernetes, Docker, CI/CD, автоматизация, AWS, Terraform, Ansible, Jenkins, мониторинг, инфраструктура, облачные технологии, системное администрирование, DevOps-инженер, DevOps-специалист, Linux, Windows Server, GitLab, Python, Nginx, Prometheus, Grafana">
-    <title>DevOps инженер Михаил Губин</title>
-    <link rel="stylesheet" href="css/midnight-ops.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Code&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Professional DevOps Engineer Portfolio - Infrastructure Automation, Cloud Solutions, and System Reliability Expert">
+    <meta name="keywords" content="DevOps, Infrastructure, Cloud, Automation, Kubernetes, Docker, AWS, Terraform, Ansible, CI/CD, Monitoring">
+    <title>DevOps Engineer | Infrastructure Expert</title>
+    <link rel="stylesheet" href="css/cloud-ops.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="newyear-body">
-    <div class="status-line"></div>
-    
-    <div class="container">
-        <!-- Header with contacts -->
-        <header>
-            <div class="contacts">
-                <a href="mailto:platform@gubin.systems"><i class="icon">📧</i> platform@gubin.systems</a>
-                <a href="https://tenchat.ru/mgubin"><i class="icon">💼</i> TenChat</a>
-                <a href="https://github.com/hawk2012"><i class="icon">🐱</i> GitHub</a>
-                <a href="https://career.habr.com/mihail-lawyer1989-gubin"><i class="icon">🌐</i> Портфолио</a>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">DevOps<span class="highlight">.pro</span></span>
             </div>
-        </header>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-        <!-- Main content -->
-        <main>
-            <section class="hero">
-                <h1>DevOps Engineer</h1>
-                <h2>Михаил Губин</h2>
-                <p class="subtitle">DevOps/SRE-инженер с фокусом на стабильность, безопасность и автоматизацию</p>
-            </section>
-
-            <section class="about">
-                <h3>ОБО МНЕ</h3>
-                <p>DevOps/SRE-инженер с 10+ годами опыта, фокусирующийся на стабильности, автоматизации и отказоустойчивости высоконагруженных систем. Моя цель — превратить инфраструктуру из источника проблем в предсказуемый, автоматизированный и наблюдаемый актив.</p>
-            </section>
-
-            <section class="skills">
-                <h3>Ключевые навыки</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">Kubernetes</div>
-                    <div class="skill-item">Docker</div>
-                    <div class="skill-item">GitLab CI/CD</div>
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">AWS</div>
-                    <div class="skill-item">Terraform</div>
-                    <div class="skill-item">Ansible</div>
-                    <div class="skill-item">Jenkins</div>
-                    <div class="skill-item">Prometheus</div>
-                    <div class="skill-item">Grafana</div>
-                    <div class="skill-item">ELK Stack</div>
-                    <div class="skill-item">Nginx</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-tagline">
+                    <span class="tag">DevOps Engineer</span>
                 </div>
-            </section>
+                <h1>Building <span class="highlight-text">Reliable Infrastructure</span> & <span class="highlight-text">Scalable Systems</span></h1>
+                <p class="hero-description">
+                    I transform complex infrastructure challenges into automated, observable, and resilient solutions. 
+                    Specializing in cloud-native technologies, container orchestration, and CI/CD pipelines.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#experience" class="btn btn-secondary">View Experience</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="cloud-container">
+                    <div class="cloud cloud-1"></div>
+                    <div class="cloud cloud-2"></div>
+                    <div class="cloud cloud-3"></div>
+                    <div class="server-rack">
+                        <div class="server-unit"></div>
+                        <div class="server-unit"></div>
+                        <div class="server-unit"></div>
+                        <div class="server-unit"></div>
+                    </div>
+                    <div class="network-pulse"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-            <section class="experience">
-                <h3>Опыт работы</h3>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate DevOps engineer with over 10 years of experience in designing, implementing, 
+                        and maintaining highly available and scalable infrastructure solutions. My expertise spans 
+                        across cloud platforms, container orchestration, automation, and monitoring systems.
+                    </p>
+                    <p>
+                        I believe in infrastructure as code, continuous delivery, and observability-first approaches. 
+                        My goal is to build systems that are not only robust and efficient but also easy to maintain 
+                        and scale as business requirements evolve.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <i class="fas fa-server"></i>
+                            <h3>10+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-cloud"></i>
+                            <h3>50+</h3>
+                            <p>Cloud Projects</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-code-branch"></i>
+                            <h3>200+</h3>
+                            <p>Automated Deployments</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-bolt"></i>
+                            <h3>99.9%</h3>
+                            <p>Uptime</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <pre><code>provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_instance" "web_server" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  
+  tags = {
+    Name = "web-server-${var.environment}"
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Skills</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Cloud Platforms</h3>
+                    <div class="skill-items">
+                        <div class="skill-bar">
+                            <span class="skill-name">AWS</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Azure</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">GCP</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="job">
-                    <div class="job-header">
-                        <h4>DevOps-инженер</h4>
-                        <div class="job-meta">
-                            <span class="company">FINSTAR FINANCIAL GROUP</span>
-                            <span class="duration">Сентябрь 2025 — По наст. время</span>
+                <div class="skill-category">
+                    <h3>Containers & Orchestration</h3>
+                    <div class="skill-items">
+                        <div class="skill-bar">
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="98%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Kubernetes</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Helm</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="88%"></div>
+                            </div>
                         </div>
                     </div>
-                    <ul class="job-responsibilities">
-                        <li>Развертывание, настройка и администрирование виртуальных машин и серверов на базе ОС Windows Server и Ubuntu Server</li>
-                        <li>Установка, конфигурация и поддержка веб-серверов (IIS, nginx) и сопутствующих технологий</li>
-                        <li>Разработка и поддержка скриптов автоматизации (Bash, Python) для развертывания приложений</li>
-                        <li>Администрирование и настройка инструментов CI/CD на платформе GitLab</li>
-                        <li>Работа с системами контроля версий (Git)</li>
-                        <li>Проекты по миграции и поддержке инфраструктуры в облачных и гибридных средах (Yandex Cloud, VK Cloud Solutions, AWS, Azure)</li>
-                        <li>Внедрение и использование инструментов управления конфигурациями (Ansible)</li>
-                        <li>Контейнеризация приложений с использованием Docker, оркестрация контейнеров с помощью Docker Compose</li>
-                    </ul>
                 </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <h4>Инженер по обеспечению качества (SRE)</h4>
-                        <div class="job-meta">
-                            <span class="company">Спарго Технологии</span>
-                            <span class="duration">Январь 2023 — Май 2025 (2 года и 5 месяцев)</span>
+                
+                <div class="skill-category">
+                    <h3>Infrastructure as Code</h3>
+                    <div class="skill-items">
+                        <div class="skill-bar">
+                            <span class="skill-name">Terraform</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Ansible</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">CloudFormation</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
                         </div>
                     </div>
-                    <ul class="job-responsibilities">
-                        <li>Эксплуатация и автоматизация инфраструктуры на базе Linux и Windows</li>
-                        <li>Работа с Kubernetes — развертывание, настройка и поддержка кластеров</li>
-                        <li>Настройка деплоев, автомасштабирование (HPA), мониторинг состояния подов и нод</li>
-                        <li>Автоматизация рутинных операций с помощью bash-скриптов, что сократило время на выполнение задач более чем на 30%</li>
-                        <li>Использование инструментов GitOps (например, Argo CD) для управления конфигурациями в k8s-средах</li>
-                        <li>Развертывание и настройка ПО в тестовой и боевой среде</li>
-                        <li>Оптимизация ресурсных ограничений (requests/limits) и настройка readiness/liveness проб</li>
-                        <li>Поддержка API мобильных приложений, анализ логов через решения вроде ELK и Loki</li>
-                        <li>Интеграция сервисов с централизованной системой логирования и мониторинга (Prometheus, Grafana)</li>
-                    </ul>
                 </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <h4>Менеджер технической поддержки</h4>
-                        <div class="job-meta">
-                            <span class="company">ЦВ ЭП</span>
-                            <span class="duration">Июль 2018 — Сентябрь 2020 (2 года и 3 месяца)</span>
+                
+                <div class="skill-category">
+                    <h3>CI/CD & Monitoring</h3>
+                    <div class="skill-items">
+                        <div class="skill-bar">
+                            <span class="skill-name">GitLab CI</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="93%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Jenkins</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="87%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Prometheus</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
                         </div>
                     </div>
-                    <ul class="job-responsibilities">
-                        <li>Выпуск и управление ключами электронных цифровых подписей</li>
-                        <li>Консультации клиентов по вопросам использования ЭЦП в различных системах</li>
-                        <li>Настройка ПО на устройствах клиентов, включая установку и интеграцию КриптоПро CSP и КриптоПро ЭЦП</li>
-                        <li>Помощь в аккредитации клиентов на различных торговых площадках</li>
+                </div>
+            </div>
+            
+            <div class="tech-stack">
+                <h3>Additional Technologies</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-linux"></i>
+                        <span>Linux</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-docker"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-kubernetes"></i>
+                        <span>Kubernetes</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database"></i>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Networking</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Work Experience</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025 - Present</span>
+                        <h3>DevOps Engineer</h3>
+                        <h4>FINSTAR FINANCIAL GROUP</h4>
+                        <ul class="timeline-details">
+                            <li>Deployed and managed virtual machines and servers on Windows Server and Ubuntu Server platforms</li>
+                            <li>Configured and maintained web servers (IIS, nginx) and associated technologies</li>
+                            <li>Developed automation scripts in Bash and Python for application deployment</li>
+                            <li>Administered GitLab CI/CD platforms for continuous integration and delivery</li>
+                            <li>Migrated infrastructure to hybrid cloud environments (Yandex Cloud, VK Cloud Solutions, AWS, Azure)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - 2025</span>
+                        <h3>SRE Engineer</h3>
+                        <h4>Спарго Технологии</h4>
+                        <ul class="timeline-details">
+                            <li>Operated and automated infrastructure on Linux and Windows environments</li>
+                            <li>Deployed and maintained Kubernetes clusters with focus on scalability</li>
+                            <li>Implemented HPA for auto-scaling and configured readiness/liveness probes</li>
+                            <li>Automated routine operations with bash scripts, reducing task time by 30%</li>
+                            <li>Integrated services with centralized logging and monitoring (Prometheus, Grafana)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2018 - 2020</span>
+                        <h3>Support Manager</h3>
+                        <h4>ЦВ ЭП</h4>
+                        <ul class="timeline-details">
+                            <li>Managed digital signature keys and certificates</li>
+                            <li>Provided technical consultations for digital signature systems</li>
+                            <li>Configured software on client devices including CryptoPro CSP</li>
+                            <li>Assisted clients with accreditation on trading platforms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in discussing new opportunities and technical challenges.</p>
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>platform@gubin.systems</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/hawk2012</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/devops-engineer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DevOps<span class="highlight">.pro</span></h4>
+                    <p>Building reliable, scalable, and efficient infrastructure solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
                     </ul>
                 </div>
-            </section>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-docker"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DevOps Professional. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-            <section class="education">
-                <h3>Образование</h3>
-                <div class="education-item">
-                    <h4>Московский финансово-юридический университет</h4>
-                    <div class="education-meta">
-                        <span class="institution">Факультет управления и права</span>
-                        <span class="year">Сентябрь 2013 — Июнь 2016</span>
-                    </div>
-                    <p>Специальность: Юрист</p>
-                </div>
-                <div class="education-item">
-                    <h4>Центр подготовки руководителей и команд цифровой трансформации ВШГУ РАНХиГС</h4>
-                    <div class="education-meta">
-                        <span class="institution">Инструменты цифрового развития: проектный, процессный и продуктовый подходы</span>
-                        <span class="year">Февраль 2024 — Май 2024</span>
-                    </div>
-                </div>
-                <div class="education-item">
-                    <h4>Университет Иннополис</h4>
-                    <div class="education-meta">
-                        <span class="institution">Основы тестирования ПО</span>
-                        <span class="year">Июнь 2022 — Сентябрь 2022</span>
-                    </div>
-                </div>
-                <div class="education-item">
-                    <h4>ФГБОУ ВО &raquo;Тульский государственный университет&laquo;</h4>
-                    <div class="education-meta">
-                        <span class="institution">Разработка веб-приложений</span>
-                        <span class="year">Октябрь 2020 — Ноябрь 2020</span>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="experience">
-            <p style="font-size: 0.9em;">&copy; Михаил Губин, 2025-2026. Все права защищены</p>
-        </footer>
-    </div>
-
-    <script src="js/newyear.js"></script>
-    <script src="js/midnight-ops.js"></script>
+    <script src="js/cloud-ops.js"></script>
 </body>
 </html>
