@@ -1,6 +1,10 @@
 // Cloud Ops - Modern DevOps Portfolio JavaScript
 
+// Handle include functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Load includes
+    loadIncludes();
+    
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -21,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             
@@ -78,15 +82,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get form data
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject') ? document.getElementById('subject').value : '';
             const message = document.getElementById('message').value;
             
             // Simple validation
             if (name && email && message) {
                 // In a real application, you would send the data to a server here
-                alert('Thank you for your message! I will get back to you soon.');
+                alert('Спасибо за ваше сообщение! Я свяжусь с вами в ближайшее время.');
                 contactForm.reset();
             } else {
-                alert('Please fill in all fields.');
+                alert('Пожалуйста, заполните все поля.');
             }
         });
     }
@@ -226,6 +231,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Function to load header and footer includes
+function loadIncludes() {
+    // Load header
+    if (document.querySelector('include[src="header.html"]')) {
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('include[src="header.html"]').outerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    }
+    
+    // Load footer
+    if (document.querySelector('include[src="footer.html"]')) {
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('include[src="footer.html"]').outerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    }
+}
 
 // Add ripple effect CSS dynamically
 const style = document.createElement('style');
