@@ -181,6 +181,13 @@ body {
     flex-direction: column;
 }
 
+.window.maximized {
+    top: 25px !important;
+    left: 20px !important;
+    width: calc(100% - 40px) !important;
+    height: calc(100% - 120px) !important;
+}
+
 /* Window resize handle */
 .window-resize-handle {
     position: absolute;
@@ -254,6 +261,11 @@ body {
     overflow-y: auto;
     background: white;
     min-height: 0; /* Needed for flex child to have proper scrolling */
+    height: 100%;
+}
+
+.window.maximized .window-content {
+    overflow-y: auto;
 }
 
 .window-content h2 {
