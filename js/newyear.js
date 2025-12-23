@@ -3,6 +3,61 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add New Year's body class
     document.body.classList.add('newyear-body');
     
+    // Add Midnight Ops elements
+    addMidnightOpsElements();
+    
+    // Add Midnight Ops elements function
+    function addMidnightOpsElements() {
+        // Add status indicators to job items to simulate CI/CD pipeline status
+        const jobItems = document.querySelectorAll('.job');
+        jobItems.forEach((job, index) => {
+            // Add status indicator based on position (first = success, second = running, etc.)
+            const statusIndicator = document.createElement('div');
+            statusIndicator.className = 'status-indicator';
+            statusIndicator.style.position = 'absolute';
+            statusIndicator.style.top = '10px';
+            statusIndicator.style.right = '10px';
+            statusIndicator.style.width = '12px';
+            statusIndicator.style.height = '12px';
+            statusIndicator.style.borderRadius = '50%';
+            
+            // Different status for each job to simulate pipeline
+            if (index === 0) {
+                statusIndicator.className += ' status-success';
+                statusIndicator.style.backgroundColor = '#2ea043';
+                statusIndicator.title = 'Success';
+            } else if (index === 1) {
+                statusIndicator.className += ' status-running';
+                statusIndicator.style.backgroundColor = '#58a6ff';
+                statusIndicator.title = 'Running';
+            } else {
+                statusIndicator.className += ' status-pending';
+                statusIndicator.style.backgroundColor = '#8b949e';
+                statusIndicator.title = 'Pending';
+            }
+            
+            job.appendChild(statusIndicator);
+        });
+        
+        // Add terminal-style log viewer in footer
+        const footer = document.querySelector('footer.experience');
+        if (footer) {
+            const terminalDiv = document.createElement('div');
+            terminalDiv.className = 'log-viewer';
+            terminalDiv.innerHTML = `
+                <div class="log-line">[INFO] Starting deployment pipeline...</div>
+                <div class="log-line">[SUCCESS] Code checkout completed</div>
+                <div class="log-line">[SUCCESS] Building Docker image</div>
+                <div class="log-line">[SUCCESS] Running tests</div>
+                <div class="log-line">[SUCCESS] Deploying to staging</div>
+                <div class="log-line terminal-success">[SUCCESS] Deployment completed successfully</div>
+                <div class="log-line">[INFO] Pipeline duration: 2m 34s</div>
+                <div class="log-line">[INFO] Happy New Year! 🎉 DevOps automation continues...</div>
+            `;
+            footer.appendChild(terminalDiv);
+        }
+    }
+    
     // Create snowflakes
     function createSnowflakes() {
         const snowContainer = document.createElement('div');
