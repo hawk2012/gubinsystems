@@ -194,6 +194,11 @@ document.addEventListener('DOMContentLoaded', function() {
         let isResizing = false;
         let startX, startY, startWidth, startHeight;
         
+        // Add resize handle to each window
+        const resizeHandle = document.createElement('div');
+        resizeHandle.className = 'window-resize-handle';
+        window.appendChild(resizeHandle);
+        
         // For simplicity, we'll just add a maximize button effect
         const maximizeButton = window.querySelector('.control.maximize');
         if (maximizeButton) {
@@ -215,6 +220,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
+        
+        // Implement actual resize functionality
+        resizeHandle.addEventListener('mousedown', function(e) {
+            isResizing = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            startWidth = parseInt(document.defaultView.getComputedStyle(window).width);
+            startHeight = parseInt(document.defaultView.getComputedStyle(window).height);
+            
+            // Bring window to front
+            let highestZ = 0;
+            document.querySelectorAll('.window').forEach(w => {
+                const z = parseInt(w.style.zIndex) || 0;
+                if (z > highestZ) highestZ = z;
+            });
+            window.style.zIndex = highestZ + 1;
+            
+            e.preventDefault();
+        });
+        
+        document.addEventListener('mousemove', function(e) {
+            if (isResizing) {
+                const width = startWidth + (e.clientX - startX);
+                const height = startHeight + (e.clientY - startY);
+                
+                // Set minimum dimensions
+                window.style.width = Math.max(width, 300) + 'px';
+                window.style.height = Math.max(height, 200) + 'px';
+            }
+        });
+        
+        document.addEventListener('mouseup', function() {
+            isResizing = false;
+        });
     });
     
     // Add some initial animations

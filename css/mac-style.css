@@ -170,6 +170,8 @@ body {
     left: 100px;
     width: 700px;
     height: 500px;
+    min-width: 300px;
+    min-height: 200px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
@@ -177,6 +179,29 @@ body {
     z-index: 100;
     display: flex;
     flex-direction: column;
+}
+
+/* Window resize handle */
+.window-resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    background: transparent;
+    cursor: se-resize;
+    z-index: 101;
+}
+
+.window-resize-handle::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
 
 .window-header {
@@ -228,6 +253,7 @@ body {
     padding: 20px;
     overflow-y: auto;
     background: white;
+    min-height: 0; /* Needed for flex child to have proper scrolling */
 }
 
 .window-content h2 {
@@ -349,20 +375,33 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        overflow: auto; /* Allow scrolling on mobile */
+    }
+    
     .window {
         width: 90%;
         height: 80vh;
         top: 10%;
         left: 5%;
+        min-height: 400px;
     }
     
     .desktop {
         height: calc(100vh - 80px);
+        background-size: cover;
     }
     
     .dock {
         bottom: 10px;
         padding: 6px;
+        flex-wrap: wrap; /* Allow dock items to wrap on small screens */
+        max-width: 90%;
+    }
+    
+    .dock-item {
+        padding: 6px;
+        min-width: 40px;
     }
     
     .dock-item i {
@@ -379,11 +418,80 @@ body {
     }
     
     .menu-items {
-        gap: 10px;
+        gap: 8px;
     }
     
     .menu-right {
-        gap: 8px;
+        gap: 6px;
         font-size: 9px;
+    }
+    
+    /* Adjust desktop icons for mobile */
+    .desktop-icon {
+        position: relative;
+        display: inline-block;
+        margin: 20px;
+        top: unset !important;
+        left: unset !important;
+    }
+    
+    .desktop-icon:nth-child(1), 
+    .desktop-icon:nth-child(2), 
+    .desktop-icon:nth-child(3), 
+    .desktop-icon:nth-child(4), 
+    .desktop-icon:nth-child(5) {
+        position: relative;
+        top: unset !important;
+        left: unset !important;
+    }
+}
+
+/* Additional responsive improvements for very small screens */
+@media (max-width: 480px) {
+    .window {
+        width: 95%;
+        height: 75vh;
+        top: 12.5%;
+        left: 2.5%;
+        min-height: 300px;
+    }
+    
+    .window-content {
+        padding: 15px;
+    }
+    
+    .window-content h2 {
+        font-size: 18px;
+    }
+    
+    .window-content p {
+        font-size: 14px;
+    }
+    
+    .dock {
+        max-width: 100%;
+        padding: 4px;
+    }
+    
+    .dock-item {
+        padding: 5px;
+        min-width: 35px;
+    }
+    
+    .dock-item i {
+        font-size: 18px;
+    }
+    
+    .desktop-icon {
+        margin: 15px;
+        width: 70px;
+    }
+    
+    .desktop-icon i {
+        font-size: 28px;
+    }
+    
+    .desktop-icon span {
+        font-size: 11px;
     }
 }
