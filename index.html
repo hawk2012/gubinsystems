@@ -51,17 +51,41 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="cloud-container">
-                    <div class="cloud cloud-1"></div>
-                    <div class="cloud cloud-2"></div>
-                    <div class="cloud cloud-3"></div>
-                    <div class="server-rack">
-                        <div class="server-unit"></div>
-                        <div class="server-unit"></div>
-                        <div class="server-unit"></div>
-                        <div class="server-unit"></div>
+                <!-- GitLab Pipeline Visualization -->
+                <div class="gitlab-pipeline">
+                    <!-- Build Stage -->
+                    <div class="pipeline-stage">
+                        <div class="stage-circle build-stage">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="stage-label">Build</div>
                     </div>
-                    <div class="network-pulse"></div>
+                    
+                    <!-- Arrow -->
+                    <div class="pipeline-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    
+                    <!-- Test Stage -->
+                    <div class="pipeline-stage">
+                        <div class="stage-circle test-stage">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <div class="stage-label">Test</div>
+                    </div>
+                    
+                    <!-- Arrow -->
+                    <div class="pipeline-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    
+                    <!-- Deploy Stage -->
+                    <div class="pipeline-stage">
+                        <div class="stage-circle deploy-stage">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="stage-label">Deploy</div>
+                    </div>
                 </div>
             </div>
         </div>

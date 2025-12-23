@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <filter id="blur1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+    </filter>
+    <filter id="blur2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGradient)" />
+  
+  <!-- Cloud shapes -->
+  <g opacity="0.15">
+    <circle cx="200" cy="150" r="80" fill="#4361ee" filter="url(#blur1)" />
+    <circle cx="1000" cy="100" r="100" fill="#7209b7" filter="url(#blur1)" />
+    <circle cx="600" cy="400" r="120" fill="#4cc9f0" filter="url(#blur2)" />
+  </g>
+  
+  <!-- Network nodes -->
+  <g opacity="0.2">
+    <circle cx="300" cy="200" r="15" fill="#4ade80" />
+    <circle cx="400" cy="150" r="15" fill="#4ade80" />
+    <circle cx="500" cy="200" r="15" fill="#4ade80" />
+    <circle cx="400" cy="250" r="15" fill="#4ade80" />
+    
+    <!-- Connections -->
+    <line x1="300" y1="200" x2="400" y2="150" stroke="#4ade80" stroke-width="2" />
+    <line x1="400" y1="150" x2="500" y2="200" stroke="#4ade80" stroke-width="2" />
+    <line x1="500" y1="200" x2="400" y2="250" stroke="#4ade80" stroke-width="2" />
+    <line x1="400" y1="250" x2="300" y2="200" stroke="#4ade80" stroke-width="2" />
+    <line x1="300" y1="200" x2="500" y2="200" stroke="#4ade80" stroke-width="2" />
+  </g>
+  
+  <!-- CI/CD Pipeline representation -->
+  <g opacity="0.15">
+    <!-- Pipeline boxes -->
+    <rect x="150" y="400" width="100" height="60" rx="8" fill="#facc15" />
+    <rect x="300" y="400" width="100" height="60" rx="8" fill="#facc15" />
+    <rect x="450" y="400" width="100" height="60" rx="8" fill="#facc15" />
+    <rect x="600" y="400" width="100" height="60" rx="8" fill="#facc15" />
+    
+    <!-- Arrows between pipeline stages -->
+    <path d="M250 430 L270 410 L270 450 Z" fill="#facc15" />
+    <path d="M400 430 L420 410 L420 450 Z" fill="#facc15" />
+    <path d="M550 430 L570 410 L570 450 Z" fill="#facc15" />
+  </g>
+  
+  <!-- DevOps gears -->
+  <g opacity="0.1" transform="rotate(15, 800, 300)">
+    <circle cx="800" cy="300" r="40" fill="none" stroke="#4cc9f0" stroke-width="4" />
+    <circle cx="800" cy="300" r="25" fill="none" stroke="#4cc9f0" stroke-width="3" />
+    <!-- Gear teeth -->
+    <path d="M800,260 L805,265 L795,265 Z M840,300 L845,305 L845,295 Z M800,340 L805,335 L795,335 Z M760,300 L755,295 L755,305 Z M828,272 L832,276 L824,276 Z M828,328 L832,324 L824,324 Z M772,328 L768,324 L776,324 Z M772,272 L768,276 L776,276 Z" fill="#4cc9f0" />
+  </g>
+  
+  <g opacity="0.1" transform="rotate(-25, 900, 400)">
+    <circle cx="900" cy="400" r="35" fill="none" stroke="#7209b7" stroke-width="4" />
+    <circle cx="900" cy="400" r="20" fill="none" stroke="#7209b7" stroke-width="3" />
+    <!-- Gear teeth -->
+    <path d="M900,365 L904,369 L896,369 Z M935,400 L939,404 L939,396 Z M900,435 L904,431 L896,431 Z M865,400 L861,396 L861,404 Z M924,376 L927,379 L921,379 Z M924,424 L927,421 L921,421 Z M876,424 L873,421 L879,421 Z M876,376 L873,379 L879,379 Z" fill="#7209b7" />
+  </g>
+</svg>
