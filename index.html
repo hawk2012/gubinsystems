@@ -50,44 +50,6 @@
                     <a href="#experience" class="btn btn-secondary">View Experience</a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <!-- GitLab Pipeline Visualization -->
-                <div class="gitlab-pipeline">
-                    <!-- Build Stage -->
-                    <div class="pipeline-stage">
-                        <div class="stage-circle build-stage">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="stage-label">Build</div>
-                    </div>
-                    
-                    <!-- Arrow -->
-                    <div class="pipeline-arrow">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                    
-                    <!-- Test Stage -->
-                    <div class="pipeline-stage">
-                        <div class="stage-circle test-stage">
-                            <i class="fas fa-vial"></i>
-                        </div>
-                        <div class="stage-label">Test</div>
-                    </div>
-                    
-                    <!-- Arrow -->
-                    <div class="pipeline-arrow">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                    
-                    <!-- Deploy Stage -->
-                    <div class="pipeline-stage">
-                        <div class="stage-circle deploy-stage">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="stage-label">Deploy</div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
@@ -143,18 +105,54 @@
                             <span class="dot yellow"></span>
                             <span class="dot green"></span>
                         </div>
-                        <pre><code>provider "aws" {
-  region = "us-west-2"
-}
+                        <pre><code>stages:
+  - validate
+  - plan
+  - apply
 
-resource "aws_instance" "web_server" {
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  
-  tags = {
-    Name = "web-server-${var.environment}"
-  }
-}</code></pre>
+variables:
+  TF_ROOT: ${CI_PROJECT_DIR}/terraform
+  AWS_DEFAULT_REGION: us-west-2
+
+before_script:
+  - apt-get update -qq && apt-get install -y -qq curl unzip
+  - curl -sL https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip > /tmp/terraform.zip
+  - unzip /tmp/terraform.zip
+  - export PATH=$PATH:$(pwd)
+  - terraform version
+  - terraform init
+
+validate:
+  stage: validate
+  script:
+    - terraform validate
+    - terraform fmt -check
+  only:
+    - merge_requests
+    - develop
+    - main
+
+plan:
+  stage: plan
+  script:
+    - terraform plan -out=tfplan
+  artifacts:
+    paths:
+      - tfplan
+    expire_in: 1 hour
+  only:
+    - merge_requests
+    - develop
+    - main
+
+apply:
+  stage: apply
+  script:
+    - terraform apply -auto-approve
+  when: manual
+  only:
+    - develop
+    - main</code></pre>
                     </div>
                 </div>
             </div>
@@ -316,24 +314,8 @@ resource "aws_instance" "web_server" {
                         <span>Go</span>
                     </div>
                     <div class="tech-item">
-                        <i class="fab fa-jenkins"></i>
-                        <span>Jenkins</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fab fa-aws"></i>
-                        <span>AWS</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fab fa-google"></i>
-                        <span>GCP</span>
-                    </div>
-                    <div class="tech-item">
                         <i class="fas fa-database"></i>
                         <span>MongoDB</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-network-wired"></i>
-                        <span>Terraform</span>
                     </div>
                     <div class="tech-item">
                         <i class="fas fa-shield-alt"></i>
@@ -344,32 +326,12 @@ resource "aws_instance" "web_server" {
                         <span>Packer</span>
                     </div>
                     <div class="tech-item">
-                        <i class="fab fa-git-alt"></i>
-                        <span>Git</span>
-                    </div>
-                    <div class="tech-item">
                         <i class="fas fa-chart-line"></i>
                         <span>Grafana</span>
                     </div>
                     <div class="tech-item">
-                        <i class="fas fa-cloud"></i>
-                        <span>Azure</span>
-                    </div>
-                    <div class="tech-item">
                         <i class="fab fa-vuejs"></i>
                         <span>Vue.js</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-robot"></i>
-                        <span>AI Integration</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-brain"></i>
-                        <span>Machine Learning</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-comments"></i>
-                        <span>NLP</span>
                     </div>
                 </div>
             </div>

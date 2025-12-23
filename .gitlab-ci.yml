@@ -1,0 +1,48 @@
+stages:
+  - validate
+  - plan
+  - apply
+
+variables:
+  TF_ROOT: ${CI_PROJECT_DIR}/terraform
+  AWS_DEFAULT_REGION: us-west-2
+
+before_script:
+  - apt-get update -qq && apt-get install -y -qq curl unzip
+  - curl -sL https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip > /tmp/terraform.zip
+  - unzip /tmp/terraform.zip
+  - export PATH=$PATH:$(pwd)
+  - terraform version
+  - terraform init
+
+validate:
+  stage: validate
+  script:
+    - terraform validate
+    - terraform fmt -check
+  only:
+    - merge_requests
+    - develop
+    - main
+
+plan:
+  stage: plan
+  script:
+    - terraform plan -out=tfplan
+  artifacts:
+    paths:
+      - tfplan
+    expire_in: 1 hour
+  only:
+    - merge_requests
+    - develop
+    - main
+
+apply:
+  stage: apply
+  script:
+    - terraform apply -auto-approve
+  when: manual
+  only:
+    - develop
+    - main
