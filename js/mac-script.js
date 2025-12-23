@@ -203,20 +203,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const maximizeButton = window.querySelector('.control.maximize');
         if (maximizeButton) {
             maximizeButton.addEventListener('click', function() {
-                const isMaximized = window.style.width === '100%';
+                const isMaximized = window.classList.contains('maximized');
                 
                 if (isMaximized) {
                     // Restore to original size
+                    window.classList.remove('maximized');
                     window.style.width = '700px';
                     window.style.height = '500px';
                     window.style.top = '100px';
                     window.style.left = '100px';
                 } else {
                     // Maximize
-                    window.style.width = 'calc(100% - 40px)';
-                    window.style.height = 'calc(100% - 120px)';
-                    window.style.top = '25px';
-                    window.style.left = '20px';
+                    window.classList.add('maximized');
                 }
             });
         }
@@ -261,6 +259,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.dock').style.transform = 'translateX(-50%) scale(1)';
         document.querySelector('.dock').style.opacity = '1';
     }, 500);
+    
+    // Menu bar functionality
+    const menuItems = document.querySelectorAll('.menu-items span');
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const menuText = this.textContent;
+            if (menuText === 'Справка') {
+                // Show MacOS version info
+                alert('macOS Sonoma 14.7.1\nВерсия системы: 23H221');
+            }
+        });
+    });
 });
 
 // Add keyboard shortcuts
