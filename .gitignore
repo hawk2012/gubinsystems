@@ -1,1 +1,1 @@
-(css/terminal-style.css, index-terminal.html, js/terminal-script.js)
+Nothing needs to be added to .gitignore since only a source file (index.html) was modified and there are no build artifacts, dependencies, or temporary files in the changes.
