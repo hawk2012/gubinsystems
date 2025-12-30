@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 url = 'mailto:platform@gubin.systems';
                 window.location.href = url;
             } else if (commandText.includes('curl')) {
-                url = 'https://linkedin.com/in/mikhail-gubin';
+                url = 'https://vk.com/mgubin';
                 window.open(url, '_blank');
             } else if (commandText.includes('github')) {
                 url = 'https://github.com/hawk2012';
