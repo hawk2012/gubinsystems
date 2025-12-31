@@ -1,1 +1,53 @@
-Nothing should be ignored based on the provided file changes. The only modified file is `index.html`, which is a source file and should not be ignored.
+```
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+*.lock.hcl
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies and build artifacts
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.class
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
+dist/
+build/
+target/
+.venv/
+venv/
+.env
+coverage/
+htmlcov/
+.mypy_cache/
+.pytest_cache/
+.gradle/
+```
