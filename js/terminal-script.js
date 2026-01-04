@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let url = '';
             
             if (commandText.includes('ssh')) {
-                url = 'mailto:platform@gubin.systems';
+                url = 'mailto:me@devfull.ru';
                 window.location.href = url;
             } else if (commandText.includes('curl')) {
                 url = 'https://vk.com/mgubin';
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 response = 'Senior DevOps Engineer at FINSTAR FINANCIAL GROUP, SRE at Spargo Technologies...';
                 break;
             case 'contact':
-                response = 'platform@gubin.systems | github.com/hawk2012 | vk.ru/mgubin';
+                response = 'me@devfull.ru | github.com/hawk2012 | vk.ru/mgubin';
                 break;
             case 'joke':
                 response = 'Why do Java developers wear glasses? Because they don\'t C#!';
